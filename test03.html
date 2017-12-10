@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+		*{
+			padding: 0;
+			margin: 0;
+		}
+		}
+			ul li {
+				/*去掉列表的点*/
+				list-style: none;
+				display: inline-block;
+				margin-right: 10px;
+				border-top: 3px solid rgba(0, 0, 0, 0);
+				/*width: 70px;*/
+			}
+			
+			ul li a {
+				text-decoration: none;
+			}
+			
+			ul li:hover {
+				border-top-color: #0000FF;
+			}
+			
+			ul>li>.ul02>li {
+				/*display: block;*/
+				display: none;
+				/*width: 60px;*/
+				height: 20px;
+				line-height: 20px;
+				text-align: center;
+				
+			}
+			
+			ul li:hover .ul02 li {
+				/*display: none;*/
+				display: block;
+			}
+			/*定位;绝对定位*/
+			ul li ul{
+				position:absolute;
+			}
+			ul li ul li{
+				float:none;
+			}
+			
+		</style>
+	</head>
+
+	<body>
+		<div>
+		<ul>
+			<li><a href="#">首页</a>
+
+			</li>
+
+			<li><a href="#">发现</a>
+				<ul class="ul02">
+					<li >作品</li>
+					<li>文章</li>
+					<li>设计大赛</li>
+					<li>水平</li>
+				</ul>
+			</li>
+			<li><a href="#">学习</a>
+				<ul class="ul02">
+					<li>作品</li>
+					<li>文章</li>
+					<li>设计大赛</li>
+					<li>水平</li>
+				</ul>
+			</li>
+			<li><a href="#">培训</a>
+				<ul class="ul02">
+					<li>作品</li>
+					<li>文章</li>
+					<li>设计大赛</li>
+					<li>水平</li>
+				</ul>
+			</li>
+			<li><a href="#">训练营</a>
+				<ul class="ul02">
+					<li>作品</li>
+					<li>文章</li>
+					<li>设计大赛</li>
+					<li>水平</li>
+				</ul>
+			</li>
+			<li><a href="#">招聘</a>
+				<ul class="ul02">
+					<li>作品</li>
+					<li>文章</li>
+					<li>设计大赛</li>
+					<li>水平</li>
+				</ul>
+			</li>
+		</ul>
+</div>
+	</body>
+
+</html>

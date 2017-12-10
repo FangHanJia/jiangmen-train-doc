@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+		
+			#p1{
+				color: #00ffff;
+				font-size: 14px;
+			}
+			#p2{
+				color: #000000;
+				font-size: 17px;
+			}
+			.pText,#p3{
+				color: #FF0000;
+				font-size: 20px;
+			}
+			img{
+				height: 200px;
+				
+			}
+			.div01 p{
+				color: goldenrod;
+				font-size: 25px;
+			}
+			.pCenter{
+				width: 200px;
+				height: 200px;
+				background-color: greenyellow;
+				text-align: center;
+				line-height: 200px;
+				color: #0000FF;
+				
+			}
+		</style>
+	</head>
+	<body>
+		<center>
+		<!--ID选择器-->
+		<p id="p1">我是一个小段落1</p>
+		<p id="p2">我是一个小段落2</p>
+		
+		<!--类选择器-->
+		<p class="pText">我是一个小段落3</p>
+		<p class="pText">我是一个小段落4</p>
+		
+		<!--选择器的优先级：内部>id>class>p--1000、100、10、1-->
+		
+		<p id="p3">我是一个小段落</p>
+		
+		<div class="div01">
+			<p>内部段落5</p>
+			<p>内部段落6</p>
+		</div>
+		</center>
+		
+		<hr />
+		<center><img src="img/02.jpg"/></center>
+		<hr />
+		<!--文本居中-->
+		<p class="pCenter">段落居中</p>
+	</body>
+</html>
