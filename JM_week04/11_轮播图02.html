@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+		/*容器的css属性*/
+			.div_boxs{
+				position: relative;
+				margin: 200px auto;
+				width: 600px;
+				height: 220px;
+				overflow: hidden;
+			}
+			/*长盒子：装五张图片
+			 * width: 3000px;
+			 */
+			.div_boxs>.div_box{
+				width: 3000px;
+				height: 220px;
+				position: absolute;
+				left: 0;
+			}
+			.div_boxs>.div_box>img{
+				width: 600px;
+				height: 220px;
+			}
+			
+			
+		</style>
+	</head>
+	<body>
+		<div class="div_boxs">
+			<div class="div_box">
+					<img src="img/lx1.png"/><img src="img/lx2.png"/><img src="img/lx3.png"/><img src="img/lx4.png"/><img src="img/lx1.png"/>
+			</div>
+		</div>
+	</body>
+	<script type="text/javascript">
+		//拿到标签
+		var imgs = document.querySelector(".div_boxs>.div_box");
+		var imgsCount =document.querySelectorAll(".div_box>img").length;
+		var distance = 0;
+		//获取最后一张图片的位置-盒子宽度除以图片数量计算出每一张图片的宽度再乘以除去本身的图片数量。
+		
+		var leftMaxDistance =parseInt(getComputedStyle(imgs).width)/imgsCount *(imgsCount-1);
+		
+//		setInterval( function(){
+//			
+//			if(distance>=0){
+//				distance=-leftMaxDistance;
+//			}
+//			imgs.style.left = (distance = distance+5)+"px";
+//			
+//		},50);
+		//向左无缝移动-用定时器来执行
+		setInterval( function(){
+			
+			if(distance<=-leftMaxDistance){
+				//让图片回归原位
+				distance=0;
+			}
+			//整个盒子向左移动
+			imgs.style.left = (distance = distance-10)+"px";
+			
+		},50);
+		
+		
+	</script>
+</html>

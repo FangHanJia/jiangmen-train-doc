@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				padding: 0;
+				margin: 0;
+			}
+			.boxs{
+				width: 960px;
+				margin: 0 auto;
+				background-color: gray;
+			}
+			.boxs>div{
+				float: left;
+			}
+			.boxs>.box_left{
+				width: 700px;
+				height: 800px;
+				background-color: goldenrod;
+				position: relative;
+				margin-right: 10px;
+			}
+			.boxs>.box_left>.left_title{
+				width: 700px;
+				height: 80px;
+				background-color: black;
+				position: absolute;
+				top: 0;
+				left: 0;
+				display: none;
+			}
+			
+			.boxs>.box_right_01{
+				width: 246px;
+				height: 300px;
+				background-color: aqua;
+				position: relative;
+			}
+			.boxs>.box_right_01>.right_title{
+				width: 246px;
+				height: 30px;
+				background-color: black;
+				position: absolute;
+				top: 0;
+				left: 0;
+				/*display: none;*/
+			}
+			.boxs>.box_right_02{
+				width: 246px;
+				height: 300px;
+				background-color: burlywood;
+			}
+			@media only screen and (min-width: 100px) and (max-width: 940px) {
+			 .boxs>.box_right_01{
+			 	display: none;
+			 }
+			 .boxs>.box_right_02{
+			 	display: none;
+			 }
+			.boxs>.box_left>.left_title{
+				display: block;
+			}
+			
+			}
+			
+		</style>
+	</head>
+	<body>
+		<div class="boxs">
+			<div class="box_left">
+			   <div class="left_title"></div>
+			</div>
+			<div class="box_right_01">
+				<div class="right_title"></div>
+			</div>
+			<div class="box_right_02"></div>
+		</div>
+		
+	</body>
+</html>

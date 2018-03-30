@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+		
+		*{
+			padding: 0;
+			margin: 0;
+		}
+		.div01>div{
+			float: left;
+			margin-right: 30px;
+		}
+			.div01{
+				width: 500px;
+				margin: 0 auto;
+				background-color: blue;
+			}
+			.div01>.div_left{
+				height: 250px;
+				width: 60px;
+				background-color: gold;
+			}
+			.div01>.div_left02{
+				height: 250px;
+				width: 250px;
+				background-color: gold;
+				display: none;
+			}
+			.div01>.div_middle{
+				height: 250px;
+				width: 250px;
+				background-color: red;
+			}
+			.div01>.div_right02{
+				height: 250px;
+				width: 250px;
+				background-color: green;
+				margin: 0 auto;
+				display: none;
+				
+			}
+			.div01>.div_right{
+				height: 250px;
+				width: 60px;
+				background-color: green;
+			}
+			
+			@media only screen and (min-width: 260px) and (max-width: 420px) {
+				.div01>.div_right{
+					display: none;
+				}
+				.div01>.div_right02{
+					width: 320px;
+					display: block;
+				}
+				.div01>.div_left{
+					margin-right: 10px;
+				}
+				/*.div01>.div_left02{
+					display: block;
+				}*/
+			}
+			@media only screen and (min-width: 100px) and (max-width: 280px) {
+					.div01>.div_left{
+					display: none;
+				}
+				.div01>.div_left02{
+					display: block;
+				}
+				.div01>.div_right02{
+					width: 250px;
+					/*display: block;*/
+				}
+			}
+		</style>
+	</head>
+	<body>
+		<div class="div01">
+		  <div class="div_left">
+		  </div> 
+		  <div class="div_middle">
+		  	
+		  </div> 
+		  <div class="div_right">
+		  </div>
+		  <div class="div_right02">
+		  </div>
+		  <div class="div_left02">
+		  </div> 
+		</div>
+		
+	</body>
+</html>

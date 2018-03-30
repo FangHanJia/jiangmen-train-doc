@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<!--没有位移效果的轮播图-->
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			ul{
+				width: 440px;
+				height: 320px;
+				margin: 0 auto;
+				overflow: hidden;
+			}
+			ul>li{
+				list-style: none;
+			}
+		</style>
+	</head>
+	<body>
+		<ul>
+			<li><img src="img/lx1.png"/> </li>
+		</ul>
+	</body>
+	<script type="text/javascript">
+	//拿到标签id
+		var img = document.querySelector("ul>li>img");
+//		var imgs = [];
+		//变量-记录轮播的次数
+		var index = 1;
+		//定时器一个自动执行的方法
+		setInterval( function(){
+			if(index==5){//将第五张即空白换成第一张
+				index=1;
+			}
+			//每隔1s更换一张图片
+			img.src = "img/lx"+(index++) +".png";
+			//数组索引从0开始
+//			img.src = imgs[(index++)-1];
+			
+		},1000);
+		
+		
+	</script>
+</html>

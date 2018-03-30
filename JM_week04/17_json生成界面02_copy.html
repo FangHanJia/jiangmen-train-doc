@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+	
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			.hot_class {
+				background-color: gainsboro;
+				height: 355px;
+				width: 840px;
+				margin: 0 auto;
+				
+			}
+			
+			.hot_class .hot_title,
+			{
+				height: 24px;
+				/*background-color: red;*/
+				text-align: left;
+				font-weight: 100;
+				line-height: 24px;
+				margin-bottom: 20px;
+			}
+			
+			.hot_class .hot_title>img,
+			{
+				margin-right: 13px;
+				/*微调用相对定位*/
+				position: relative;
+				top: 3px;
+			}
+			
+			.hot_class .hot_title>a,
+			{
+				float: right;
+				text-decoration: none;
+				color: gray;
+				font-size: 14px;
+			}
+			
+			.hot_class .hot_content>li {
+				width: 230px;
+				height: 275px;
+				float: left;
+				overflow: hidden;
+				margin-right: 25px;
+				background-color: white;
+			}
+			
+			.hot_class .hot_content>li:nth-child(1)>img {
+				border-bottom: 3px solid dodgerblue;
+			}
+			
+			.hot_class .hot_content>li:nth-child(2)>img {
+				border-bottom: 3px solid orange;
+			}
+			
+			.hot_class .hot_content>li:nth-child(3)>img {
+				border-bottom: 3px solid green;
+			}
+			
+			.hot_class .hot_content>li:nth-child(3) {
+				margin-right: 0px;
+			}
+			
+			.hot_class .hot_content>li>img {
+				height: 160px;
+			}
+			
+			 .hot_class .hot_content>li>a {
+				text-decoration: none;
+				color: black;
+				font-size: 12px;
+				margin-left: 8px;
+				margin-right: 4px;
+			}
+			
+			 .hot_class .hot_content>li>p {
+				color: gray;
+				font-size: 12px;
+				margin-left: 8px;
+				margin-right: 4px;
+				height: 50px;
+				width: 190px;
+				overflow: hidden;
+				text-overflow: ellipsis;
+				display: -webkit-box;
+				/**/
+				-webkit-line-clamp: 3;
+				-webkit-box-orient: vertical;
+			}
+		</style>
+	</head>
+			<div class="hot_class">
+						<h3 class="hot_title"><img src="tx/icon-lesson.png" />热门课程
+							<a href="#">more</a> 
+						</h3>
+						<ul class="hot_content">
+							<li><img src="tx/1510243888411.png" />
+								<a href="#"> 纪念碑谷2:背后的灵感</a>
+								<p>本期大师班推出特别版，专程邀请了 《纪念碑谷2》游戏主美、艺术总监David</p>
+							</li>
+							<li><img src="tx/1509872683613.jpg" />
+								<a href="#"> 霍金&nbsp;:&nbsp;突破摄星的目标在于实...</a>
+								<p>11月5日，在腾讯we大会上，著名物理学家霍金以视频演讲的方式向人们阐释了</p>
+							</li>
+							<li><img src="tx/1509450636364.png" />
+								<a href="#">青山周平-我的设计理想国</a>
+								<p>B.L.U.E.建筑事务所创始人。通过巧妙的空间设计完美解决了普通家庭的居</p>
+							</li>
+						</ul>
+					</div>
+	<body>
+	</body>
+</html>

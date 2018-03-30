@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			.div01{
+				width: 200px;
+				height: 200px;
+				background-color: red;
+			}
+			
+			.div02{
+				width: 200px;
+				height: 200px;
+				background-color: green;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="div01"></div>
+		<div class="div02"></div>
+	</body>
+	<script type="text/javascript">
+		var div01 = document.querySelector(".div01");
+		var div02 = document.querySelector(".div02");
+		//设置监听器
+		div01.onclick = function(){
+			div01.style.backgroundColor = "lightblue";
+//			var dis =div02.style.display ;
+			//拿到外部样式表:自身和它人监听
+			var dis =getComputedStyle(div02).display;
+			if(dis == "none"){
+				div02.style.display = "block";
+			}else{
+				div02.style.display = "none";
+			}
+		};
+		
+		//-----------------------------------------
+		
+		
+	</script>
+</html>

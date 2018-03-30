@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			.div01{
+				margin: 0 auto;
+				width: 180px;
+				height: 300px;
+				/*margin: 0 auto;*/
+				/*background: url(immGR/charector_01.png);*/
+				/*animation: girl 1s infinite step-start;*/
+				
+				
+				background: url(immGR/charector.png);
+				animation: jump 1s infinite step-start;
+				
+			}
+			
+			
+			@keyframes girl{
+				
+				0%{
+					/*top: 50px;
+				   left: 50px;*/*/
+					background: url(immGR/charector_01.png);
+					
+				}
+				20%{
+					/*top: 50px;
+				   left: 50px;*/
+					background: url(immGR/charector_02.png);
+				}
+				40%{
+					/*top: 50px;
+				   left: 50px;*/
+					background: url(immGR/charector_03.png);
+				}
+				60%{
+					/*top: 50px;
+				   left: 50px;*/
+					background: url(immGR/charector_04.png);
+				}
+				80%{
+					/*top: 50px;
+				   left: 50px;*/
+					background: url(immGR/charector_05.png);
+				}
+				100%{
+					/*top: 50px;
+				   left: 50px;*/
+					background: url(immGR/charector_01.png);
+				}
+				
+				
+				/*-----------------------------*/
+				@keyframes jump{
+					0%{
+						background-position: 180px;
+					}
+					15%{
+						background-position: 360px;
+					}
+					30%{
+						background-position: 540px;
+					}
+					45%{
+						background-position: 720px;
+					}
+					60%{
+						background-position: 900px;
+					}
+					75%{
+						background-position: 1080px;
+					}
+					100%{
+						background-position: 1260px;
+					}
+				}
+			}
+		</style>
+	</head>
+	<body>
+		<div class="div01">
+			<!--<img src="immGR/charector_01.png"/>-->
+		</div>
+	</body>
+</html>

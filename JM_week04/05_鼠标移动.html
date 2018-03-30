@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			.div01{
+				width: 200px;
+				height: 200px;
+				background-color: blue;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="div01"></div>
+	</body>
+	<script type="text/javascript">
+		//鼠标的监听---------------
+		
+		var div01 = document.querySelector(".div01");
+		//鼠标进入
+		div01.onmouseenter = function(){
+			div01.style.backgroundColor ="red";
+		};
+		//鼠标离开
+		div01.onmouseleave = function(){
+			div01.style.backgroundColor = "blue";
+		};
+		//鼠标移动
+		div01.onmousemove  = function(){
+		div01.style.backgroundColor = "gold";
+		};
+		div01.onmouseout = function(){
+			console.log("out");
+		}
+		//顺序：over>enter>move>out>leve
+		//down 鼠标按下，up 鼠标释放
+		//wheel 鼠标滚轮。
+		
+		
+	</script>
+</html>

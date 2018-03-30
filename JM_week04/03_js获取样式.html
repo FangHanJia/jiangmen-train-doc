@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			.div01{
+				width: 200px;
+				height: 400px;
+				background-color: goldenrod;
+			}
+			.div02{
+				width: 400px;
+				height: 400px;
+				background-color: red;
+				box-shadow: 10px 10px 5px gainsboro;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="div01" ></div>
+	</body>
+	
+	<script type="text/javascript">
+		var div01 = document.querySelector(".div01");
+		//此方法只能拿到内联样式
+//		var width =  alert(div01.style.width);
+		//拿到外部样式:拿到最终的style-即优先级最高的覆盖
+		var width = getComputedStyle(div01).width;
+		var width = getComputedStyle(div01)["width"];
+		var width01 =getStyle(div01,"width");
+		alert(width01);
+		//parseInt();会把字符串转化成数值，里面非数值型字符自动去掉。
+		alert(parseInt(width01));
+		
+		//写一个方法，可以获得一个标签的任意属性
+		function getStyle(ele,attr){
+			return getComputedStyle(ele)[attr];
+		}
+		div01.className="div02";
+	</script>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<div class="container"></div>
+		<input type="button" value="btnDelete" id="btnDelete" />
+	</body>
+	<script src="js/loop.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+//		loop();
+		//1、代码生成标签
+		var div = document.createElement("div");
+		
+		var container = document.querySelector(".container");
+//		    container.appendChild(div);
+		    
+		var  btnDelete = document.querySelector("#btnDelete");
+		     btnDelete.onclick = function(){
+		     	container.remove(div);
+		     };
+		     
+		     
+		var ul = document.createElement("ul");
+		for(var i=1;i<=5;i++){
+			var li = document.createElement("li");
+			ul.appendChild(li);
+		}
+		    container.appendChild(ul);
+//		    ul.appendChild(li);
+		var ul =document.querySelector("ul");
+		    ul.style.width = "500px";
+		    ul.style.backgroundColor = "blue";
+		     
+	</script>
+</html>

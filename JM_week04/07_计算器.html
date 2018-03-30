@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			* {
+				padding: 0;
+				margin: 0;
+			}
+			
+			.calculator {
+				position: relative;
+				width: 200px;
+				height: 300px;
+				margin: 0 auto;
+				background-color: navajowhite;
+			}
+			
+			.calculator>#record {
+				width: 200px;
+				height: 20px;
+				background-color: blanchedalmond;
+			}
+			
+			.calculator>#inputText {
+				width: 200px;
+				height: 40px;
+				background-color: blanchedalmond;
+				outline: none;
+				border: none;
+			}
+			
+			.calculator>.btn_div {
+				height: 30px;
+				width: 100%;
+			}
+			
+			.calculator>.btn_div>input {
+				height: 30px;
+				width: 45px;
+			}
+			
+			.calculator>.number {
+				width: 180px;
+				/*background-color: gold;*/
+			}
+			
+			.calculator>.number>input {
+				width: 45px;
+				height: 45px;
+			}
+			
+			.calculator>.btn_div02 {
+				position: absolute;
+				top: 60px;
+				right: 0;
+				width: 40px;
+				background-color: gray;
+			}
+			
+			.calculator>.btn_div02>input {
+				width: 40px;
+				height: 40px;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="calculator">
+			<p id="record"></p>
+			<input id="inputText" type="number" value="" />
+			<div class="btn_div">
+				<input id="btnDelect" type="button" value="C" />
+				<input id="btnPlus" type="button" value="+" />
+				<input id="btnMinus" type="button" value="-" />
+			</div>
+			<div class="number">
+				<input id="btnNum01" type="button" value="1" />
+				<input id="btnNum02" type="button" value="2" />
+				<input id="btnNum03" type="button" value="3" />
+				<input id="btnNum04" type="button" value="4" />
+				<input id="btnNum05" type="button" value="5" />
+				<input id="btnNum06" type="button" value="6" />
+				<input id="btnNum07" type="button" value="7" />
+				<input id="btnNum08" type="button" value="8" />
+				<input id="btnNum09" type="button" value="9" />
+				<input id="btnNum00" type="button" value="0" />
+			</div>
+			<div class="btn_div02">
+				<input id="btnMultiple" type="button" value="*" />
+				<input id="btnDivision" type="button" value="/" />
+				<input id="btnResult" type="button" value="=" />
+			</div>
+		</div>
+	</body>
+
+	<script type="text/javascript">
+		//拿到标签id
+		var numbers = document.querySelectorAll(".number>input");
+		var inputText = document.querySelector("#inputText");
+		var btnNum01 = document.querySelector("#btnNum01");
+		var btnPlus = document.querySelector("#btnPlus");
+		var btnMinus = document.querySelector("#btnMinus");
+		var btnMultiple = document.querySelector("#btnMultiple");
+		var btnDivision = document.querySelector("#btnDivision");
+		var btnResult = document.querySelector("#btnResult");
+		var btnDelect = document.querySelector("#btnDelect");
+		var record = document.querySelector("#record");
+		var signal = "+";
+		var signal = "-";
+		//设置数字监听器
+		for (var i = 0; i < numbers.length; i++) {
+			numbers[i].onclick = function() {
+				inputText.value = inputText.value + this.value;
+			};
+		}
+		//删除键
+		btnDelect.onclick = function() {
+			//字符串的截取
+			//			if(inputText.value.equals("")){
+			//				record.innerText = record.innerText.substring(0,record.innerText.length-1);
+			//			}else{
+			//				inputText.value = inputText.value.substring(0, inputText.value.length - 1);
+			//			}
+			inputText.value = inputText.value.substring(0, inputText.value.length - 1);
+		};
+		btnPlus.onclick = function() {
+			signal = "+";
+			record.innerText = inputText.value + " " + signal;
+			inputText.value = "";
+		};
+		btnMinus.onclick = function() {
+			signal = "-";
+			record.innerText = inputText.value + " " + signal;
+			inputText.value = "";
+		};
+		btnResult.onclick = function() {
+			
+			record.innerText = record.innerText + " " + inputText.value;
+			//字符串的切割
+			if () {
+				var xy = record.innerText.split("+");
+				var x = xy[0] * 1;
+				var y = xy[1] * 1;
+				inputText.value = x + y;
+			} else {
+				var xy = record.innerText.split("-");
+				var x = xy[0] * 1;
+				var y = xy[1] * 1;
+				inputText.value = x - y;
+			}
+		};
+	</script>
+
+</html>

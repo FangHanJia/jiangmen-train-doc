@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				padding: 0;
+				margin: 0;
+			}
+			 .contianer .box img{
+				width: 1000px;
+				height: 500px;
+				float: left;
+			}
+			.box{
+				width: 4000px;
+				height: 500px;
+				position: absolute;
+				left: 0;
+			}
+			.contianer{
+				height: 500px;
+				width: 1000px;
+				margin: 0 auto;
+				overflow: hidden;
+				position: relative;
+			}
+			
+		</style>
+	</head>
+	<body>
+		<!--容器-->
+		<div class="contianer">
+			<div class="box">
+				<img src="img/bz2.jpg"/>
+				<img src="img/bz3.jpg"/>
+				<img src="img/bz4.jpg"/>
+				<img src="img/bz5.jpg"/>
+			</div>
+		</div>
+	</body>
+	<script type="text/javascript">
+		var box = document.querySelector(".contianer>.box");
+		var imgs = document.querySelectorAll("img").length;
+		var leftMaxDistance =(parseInt(getComputedStyle(box).width)/imgs)*(imgs-1);
+		var distance =0;
+		setInterval(function(){
+			if(distance<=-leftMaxDistance){
+				distance = 0;
+			}
+			box.style.left= (distance = distance-20)+"px";
+		},50);
+	</script>
+</html>

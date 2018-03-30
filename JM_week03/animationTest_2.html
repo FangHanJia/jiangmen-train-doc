@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			* {
+				padding: 0;
+				margin: 0;
+			}
+			
+			body,
+			html {
+				width: 100%;
+				height: 100%;
+			}
+			
+			.contianer {
+				width: 1500px;
+				margin: 0 auto;
+			}
+			
+			.contianer figure {
+				float: left;
+				width: 500px;
+				height: 400px;
+				overflow: hidden;
+				position: relative;
+			}
+			
+			.contianer>figure:nth-child(1) h2 {
+				position: absolute;
+				top: 50px;
+				left: 50px;
+				color: white;
+			}
+			
+			.contianer>figure:nth-child(1) p {
+				position: absolute;
+				left: 100px;
+				color: white;
+				background-color: gold;
+			}
+			
+			.contianer>figure:nth-child(1) p,
+			img,
+			h2 {
+				transition: all 0.5s;
+			}
+			
+			.contianer>figure:nth-child(1) p:nth-of-type(1) {
+				top: 150px;
+				transform: translateY(400px);
+				/*transition: all 1s;*/
+			}
+			
+			.contianer>figure:nth-child(1):hover p:nth-of-type(1) {
+				transform: translateY(0);
+			}
+			
+			.contianer>figure:nth-child(1) p:nth-of-type(2) {
+				top: 200px;
+				transform: translateX(500px);
+				/*transition: all 1s;*/
+			}
+			
+			.contianer>figure:nth-child(1):hover p:nth-of-type(2) {
+				transform: translateX(0);
+			}
+			
+			.contianer>figure:nth-child(1) p:nth-of-type(3) {
+				top: 250px;
+				transform: translateX(-200px);
+				/*transition: all 1s;*/
+			}
+			
+			.contianer>figure:nth-child(1):hover p:nth-of-type(3) {
+				transform: translateX(0);
+			}
+			
+			.contianer>figure:nth-child(1):hover img {
+				transform: translateX(50px);
+				opacity: 0.8;
+			}
+			
+			.contianer>figure:nth-child(1):hover h2 {
+				transform: translateX(50px);
+				transition-delay: 0.1s;
+			}
+			
+			.contianer>figure:nth-child(2) h2 {
+				position: absolute;
+				top: 50px;
+				left: 50px;
+				color: white;
+			}
+			
+			.contianer>figure:nth-child(2) p {
+				position: absolute;
+				left: 50px;
+				color: gray;
+				background-color: white;
+			}
+			
+			.contianer>figure:nth-child(2) p:nth-of-type(1) {
+				top: 100px;
+				transform: translateX(-200px);
+				transition: all 0.5s;
+			}
+			
+			.contianer>figure:nth-child(2):hover p:nth-of-type(1) {
+				transform: translateX(0);
+			}
+			
+			.contianer>figure:nth-child(2) p:nth-of-type(2) {
+				top: 150px;
+				transform: translateX(-200px);
+				transition: all 0.8s;
+			}
+			
+			.contianer>figure:nth-child(2):hover p:nth-of-type(2) {
+				transform: translateX(0);
+			}
+			
+			.contianer>figure:nth-child(2) p:nth-of-type(3) {
+				top: 200px;
+				transform: translateX(-200px);
+				transition: all 1.2s;
+			}
+			
+			.contianer>figure:nth-child(2):hover p:nth-of-type(3) {
+				transform: translateX(0);
+			}
+			
+			.contianer>figure:nth-child(2):hover img {
+				transform: translateX(-100px);
+				opacity: 0.8;
+			}
+			
+			.contianer>figure:nth-child(3) h2 {
+				position: absolute;
+				top: 100px;
+				left: 50px;
+				color: white;
+				transform: translateY(-150px);
+				transition: all 0.5s;
+			}
+			
+			.contianer>figure:nth-child(3) p {
+				position: absolute;
+				top: 150px;
+				left: 80px;
+				color: gold;
+				transform: translateY(300px);
+				transition: all 0.5s;
+			}
+			
+			.contianer>figure:nth-child(3):hover h2 {
+				transform: translateY(0);
+			}
+			
+			.contianer>figure:nth-child(3):hover p {
+				transform: translateY(0);
+			}
+			
+			.contianer>figure:nth-child(3):hover img {
+				transform: translateY(-10px);
+				opacity: 0.8;
+			}
+			
+			.contianer>figure:nth-child(4) h2 {
+				position: absolute;
+				top: 50px;
+				left: 50px;
+				color: white;
+				transform: translateX(-120px);
+				transition: all 0.5s;
+			}
+			
+			.contianer>figure:nth-child(4):hover h2 {
+				transform: translateX(0);
+			}
+			
+			.contianer>figure:nth-child(4) .div_04 {
+				position: absolute;
+				top: 100%;
+				left: 0;
+				width: 600px;
+				height: 200px;
+				background: dodgerblue;
+				/*transform: rotate(0deg);*/
+				transform-origin: 0 0;
+				transition: all 0.5s;
+				z-index: 0;
+			}
+			
+			.contianer>figure:nth-child(4):hover .div_04 {
+				transform: rotate(-20deg);
+			}
+			
+			.contianer>figure:nth-child(4) p {
+				position: absolute;
+				top: 320px;
+				right: 50px;
+				color: white;
+				z-index: 1;
+				transform: translateX(500px);
+				transition: all 0.5s;
+			}
+			
+			.contianer>figure:nth-child(4):hover p {
+				transform: translateX(0);
+			}
+			
+			.contianer>figure:nth-child(4):hover img {
+				transform: translateX(-10px);
+				opacity: 0.9;
+			}
+			
+			.contianer>figure:nth-child(5) h2 {
+				position: absolute;
+				top: 80px;
+				left: 60px;
+				color: white;
+				transform: translateX(-300px);
+				transition: all 0.5s;
+			}
+			
+			.contianer>figure:nth-child(5):hover h2 {
+				transform: translateX(0);
+			}
+			
+			.contianer>figure:nth-child(5) p {
+				position: absolute;
+				top: 150px;
+				left: 80px;
+				color: gold;
+				transform: translateY(500px);
+				transition: all 1.2s;
+				display: block;
+				width: 360px;
+				height: 300px;
+				opacity: 0.6;
+			}
+			
+			.contianer>figure:nth-child(5):hover p {
+				transform: translateY(0);
+				opacity: 1;
+			}
+			
+			.contianer>figure:nth-child(5)>.div_05 {
+				height: 340px;
+				width: 400px;
+				border: 2px solid white;
+				position: absolute;
+				top: 40px;
+				left: 50px;
+				transform: translateY(-640px) rotate(0deg);
+				transition: all 1.2s;
+				transform-origin: 20% 30%;
+				/*transform: rotate(720deg);*/
+			}
+			
+			.contianer>figure:nth-child(5):hover .div_05 {
+				transform: translateY(0) rotate(720deg);
+				/*transform-origin: 0 0;*/
+			}
+			.contianer>figure:nth-child(6) h2{
+				position: absolute;
+				right: 40px;
+				bottom: 40px;
+				color: white;
+				transition: all 1s;
+				transform-origin: 50% 50%;
+			}
+			.contianer>figure:nth-child(6):hover h2{
+				transform: rotate(720deg);
+			}
+			
+			.contianer>figure:nth-child(6):hover img{
+				transform: scale(1.2);
+				opacity: 0.8;
+			}
+			.contianer>figure:nth-child(7):hover img{
+				transform-origin:60% 60% ;
+				transform: scale(0.9);
+				opacity: 0.8;
+			}
+			
+			.contianer>figure:nth-child(9):hover img{
+				transform:rotate(30deg) scale(1.2);
+				opacity: 0.8;
+			}
+		    .contianer>figure:nth-child(8) h2{
+		    	position: absolute;
+		    	top: 120px;
+		    	right: 90px;
+		    	transform: translateY(-160px) rotate(-90deg);
+		    	transform-origin: -80% -80%;
+		    }
+		    .contianer>figure:nth-child(8):hover h2{
+		    	transform: translateY(0) rotate(0deg);
+		    	
+		    }
+		    
+		    
+			.contianer>figure:nth-child(8) .border01{
+				position: absolute;
+				top: 60px;
+				left: 140px;
+				width: 200px;
+				height: 0px;
+				border-left:1px solid white ;
+				border-right:1px solid white ;
+				/*z-index: 1;*/
+				transition: all 1.5s;
+			}
+			.contianer>figure:nth-child(8) .border02{
+				position: absolute;
+				top: 100px;
+				left: 80px;
+				width: 0px;
+				height: 200px;
+				border-top:1px solid white ;
+				border-bottom:1px solid white ;
+				transition: all 1.5s;
+
+			} 
+			.contianer>figure:nth-child(8):hover .border01{
+				height: 300px;
+			}
+			.contianer>figure:nth-child(8):hover .border02{
+				width: 300px;
+			}
+			
+			
+		</style>
+	</head>
+
+	<body>
+		<div class="contianer">
+			<!--常用于图文混排-->
+			<figure>
+				<img src="img_01/1.png" />
+				<!--一般放文本-->
+				<figcaption>
+					<h2>billboard三首排行第一</h2>
+					<p>shake it of</p>
+					<p>Black Space</p>
+					<p>Bad Blood</p>
+				</figcaption>
+			</figure>
+			<figure>
+				<img src="img_01/2.png" />
+				<!--一般放文本-->
+				<figcaption>
+					<h2>Taylor Swift</h2>
+					<p>Birthday:1989.12.13</p>
+					<p>Height:180cm</p>
+					<p>Weight:56kg</p>
+				</figcaption>
+			</figure>
+			<figure>
+				<img src="img_01/3.png" />
+				<!--一般放文本-->
+				<figcaption>
+					<h2>Back To December</h2>
+					<p>I'm so glad you made time to see me. How's life, tell me how's your family? I haven't seen them in a while. You've been good, busier then ever. We small talk, work and the weather Your guard is up and I know why..</p>
+				</figcaption>
+			</figure>
+			<figure>
+				<img src="img_01/4.png" />
+				<!--一般放文本-->
+				<figcaption>
+					<h2>1989</h2>
+					<p>Taloy Swift</p>
+					<div class="div_04"></div>
+				</figcaption>
+			</figure>
+			<figure>
+				<img src="img_01/5.png" />
+				<!--一般放文本-->
+				<figcaption>
+					<h2>Taloy Swift-[22]</h2>
+					<p>I'm so glad you made time to see me. How's life, tell me how's your family? I haven't seen them in a while. You've been good, busier then ever. We small talk, work and the weather Your guard is up and I know why..</p>
+				</figcaption>
+				<div class="div_05"></div>
+			</figure>
+			<figure>
+				<img src="img_01/6.png" />
+				<!--一般放文本-->
+				<figcaption>
+					<h2>out of the world</h2>
+				</figcaption>
+			</figure>
+			<figure>
+				<img src="img_01/7.png" />
+				<!--一般放文本-->
+				<figcaption>
+					<h2>billboard三首排行第一</h2>
+					<p>shake it of</p>
+					<p>Black Space</p>
+					<p>Bad Blood</p>
+				</figcaption>
+			</figure>
+			<figure>
+				<img src="img_01/8.png" />
+				<!--一般放文本-->
+				<figcaption>
+					<h2>Taloy Swift</h2>
+				</figcaption>
+				<div class="border01"></div>
+				<div class="border02"></div>
+			</figure>
+			<figure>
+				<img src="img_01/9.png" />
+				<!--一般放文本-->
+				<figcaption>
+					<h2>Taloy Swift</h2>
+				</figcaption>
+				
+			</figure>
+
+		</div>
+	</body>
+
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<!--容器来装载生成的界面-->
+		<div class="boxs"></div>
+	</body>
+	<script type="text/javascript">
+		//jsonObject
+		var box00 = {
+			title:"标题",
+			imgPath:"img/lx1.png"
+		};
+		var box01 = {
+			title:"标题",
+			imgPath:"img/lx2.png"
+		};
+		var box02 = {
+			title:"标题",
+			imgPath:"img/lx3.png"
+		};
+		var box03 = {
+			title:"标题",
+			imgPath:"img/lx4.png"
+		};
+		//jsonArray包含jsonObject
+		var boxs = [box00,box01,box02,box03];
+		//1、将字符串转化为json字符串
+		var jsonString = JSON.stringify(boxs);
+		//2、将json字符串转化为json对象
+		var jsonArr = JSON.parse(jsonString);
+		
+		//拿到标签id
+		var boxs = document.querySelector(".boxs");
+		
+		//生成四个div
+		for(var i = 0;i<jsonArr.length;i++){
+			var div = document.createElement("div");
+			var p = document.createElement("p");
+			var img = document.createElement("img");
+			//jsonArray用索引取值
+			p.innerText=jsonArr[i].title;
+			img.src = jsonArr[i].imgPath;
+			div.appendChild(p);
+			div.appendChild(img);
+			boxs.appendChild(div);
+			
+		}
+		
+	</script>
+</html>

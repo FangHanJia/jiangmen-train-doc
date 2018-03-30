@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				padding: 0;
+				margin: 0;
+			}
+			
+			ul{
+				margin: 50px auto;
+				width: 1000px;
+				height: 500px;
+				border: 1px solid cornflowerblue;
+				position: relative;
+				overflow: hidden;
+			}
+			ul li{
+				list-style: none;
+				position: absolute;
+				top: 0;
+				left: 1000px;
+			}
+			ul li img{
+				width: 1000px;
+				height: 500px;
+			}
+			#first{
+				left: 0;
+			}
+		</style>
+	</head>
+	<body>
+		<!--容器-->
+		<ul>
+			<li id="first"><img src="img/bz2.jpg" alt="" /></li>
+			<li><img src="img/bz3.jpg" alt="" /></li>
+			<li><img src="img/bz4.jpg" alt="" /></li>
+			<li><img src="img/bz5.jpg" alt="" /></li>
+		</ul>
+	</body>
+	<script type="text/javascript">
+		//拿到图片
+		var imgs = document.querySelectorAll("ul>li");
+		var centerDistance  =0;
+		var rightDistance = 1000;
+		var index =0;
+		var centerRunLeft;
+		var rightRunCenter;
+		//test
+		setInterval(function(){
+			center(imgs[index++]);
+			if(index==imgs.length-1){
+				index=0;
+			}
+			right(imgs[index]);
+		},2000)
+		
+		//中间到左边的动画
+		function center(ele){
+			clearInterval(centerRunLeft);
+			centerRunLeft =  setInterval(function(){
+				if(centerDistance<=-1000){
+					clearInterval(centerRunLeft);
+					ele.style.left = 1000+"px";
+					centerDistance=0;
+				}else{
+			ele.style.left = (centerDistance=centerDistance-100)+"px";
+			}
+		},50)
+		}
+		//右边到中间的动画
+		function right(ele){
+			clearInterval(rightRunCenter);
+			rightRunCenter =  setInterval(function(){
+				if(rightDistance<=0){
+					clearInterval(rightRunCenter);
+					ele.style.left  =0+"px";
+					rightDistance=1000;
+				}else{
+				ele.style.left = (rightDistance = rightDistance-100)+"px";
+				}
+			},50);
+		}
+		
+	</script>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+	<script type="text/javascript">
+		/**
+		 * json数据
+		 */
+		//jsonObject
+		var book01 = {price:1,page:10};
+		var book02 = {price:2,page:20};
+		var book03 = {price:3,page:30};
+		var book04 = {price:4,page:40};
+		//jsonArray包含jsonObject
+		var bookStore = [book01,book02,book03,book04];
+		//jsonObject包含jsonArray
+		var school = {student:1800,books:bookStore};
+		//求price==2的书有多少页？
+		//1、转化为json字符串
+		var json  = JSON.stringify(school);
+		//2、转化为json对象
+		var jsonOb  = JSON.parse(json);
+		//3、取值
+		var arr  = jsonOb.books;
+		alert(arr[1].page);
+//		var page02 =  arr[1].page;
+//		console.log(page02);
+	</script>
+</html>

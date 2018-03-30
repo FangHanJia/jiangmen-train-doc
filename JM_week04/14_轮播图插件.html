@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			* {
+				margin: 0;
+				padding: 0;
+			}
+			
+			.box {
+				width: 640px;
+				margin: 0 auto;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="box"></div>
+		<input type="button" name="btn" id="btn" value="启动" />
+
+	</body>
+	<script type="text/javascript" src="js/loop.js"></script>
+	<script type="text/javascript">
+		var btn= document.querySelector("#btn");
+		
+	    //轮播的图片
+		var imgs = ["imgfq/img1.jpg", "imgfq/img2.jpg", "imgfq/img3.jpg", "imgfq/img4.jpg", "imgfq/img5.jpg"];
+		var loopWall = createLoopWall({
+			loopContainer: ".box",
+			imgPath: imgs,
+			animTime: 50,
+			gapTime: 1500,
+			imgWidth:640,
+			imgHeight:320
+		});
+		btn.addEventListener("click",function(){
+			 loopWall.start();
+				 //运行3秒停止
+				 setTimeout(loopWall.stop,3000);
+		});
+//				 loopWall.start();
+//				 //运行3秒停止
+//				 setTimeout(loopWall.stop,3000);
+	</script>
+
+</html>

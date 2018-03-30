@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<audio id="audio" src="" ></audio>
+		<input type="button" value="播放" id="btn" />
+	</body>
+	<script type="text/javascript">
+		var btn = document.querySelector("#btn");
+		var audio = document.querySelector("#audio");
+		
+		btn.addEventListener("click",function(){
+			if(audio.paused){
+				audio.play();
+			}else{
+				audio.pause();
+			}
+		});
+	</script>
+</html>

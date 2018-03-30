@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+	<script type="text/javascript">
+		/**
+		 * json数据： 	1、jsonObject;2、jsonArray
+		 * 		jsonObject = {name:"xx",age:"xx"}--{key:value,key:value}
+		 * 		取数据：用key
+		 * 		jsonArray=["xx","xx","xx"]--[value]
+		 * 		取数据：用索引
+		 */
+		//从网络获取的json都是字符串
+//		var jsonPerson = '{"name":"xx","age":18}';
+//		alert(JSON.parse(jsonPerson).name);
+		
+		//1、jsonObject
+		var jsonPerson = {name:"BiG",age:23};
+		//1、把对象转化为json字符串
+		var json = JSON.stringify(jsonPerson);
+		//2、把json字符串转化为json对象
+		var jsonObj = JSON.parse(json);
+		//对象的取值：对象.属性
+		alert(jsonObj.name);
+		alert(jsonObj.age);
+		
+		//2、jsonArray
+		var jsonPerson02 = ["xx","xx","xx"];
+		//1、把对象转化为json字符串
+		var json = JSON.stringify(jsonPerson);
+		//2、把json字符串转化为json对象
+		var jsonObj = JSON.parse(json);
+		//jsonArray的取值：对象[索引]
+		alert(jsonObj[0]);
+		alert(jsonObj[1]);
+		
+		  var computer0={price:20000,weight:2};
+          var computer1={price:10000,weight:3};
+          var computer2={price:2000,weight:1};
+          var computer3={price:200,weight:6};
+          //jsonArray包含jsonObject
+          var computers=[computer0,computer1,computer2,computer3];
+          //jsonObject包含jsonArray
+          var person02={name:"kingswim",age:18,Computer:computers};
+          
+          var json = JSON.stringify(person02);
+          var jsonArr = JSON.parse(json);
+          var com = jsonArr.Computer;
+//        //数组用循环迭代出来
+//        for(var i=0;i<com.length;i++){
+//        	if(com[i].price==20000){
+//        		alert(com[i].weight);
+//        	}
+//        }
+		  var w = com[0].weight;
+		  console.log(w);
+		
+		
+	</script>
+</html>

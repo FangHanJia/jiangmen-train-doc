@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+	<script type="text/javascript">
+		document.onkeydown = function(event){
+		//获得按键对应的位置
+		var code = event.keyCode;
+		//按下
+		console.log("down"+code);
+		console.log(event);
+		//组合按键
+		fi(event.altKey && code==38){
+		}
+		};
+		//释放
+		document.onkeyup = function(){
+//			alert();
+		console.log("up");
+		};
+		
+		//功能键，长按不起效果
+		document.onkeypress = function(){
+//			alert();
+		console.log("press");
+		};
+		
+		
+	</script>
+</html>

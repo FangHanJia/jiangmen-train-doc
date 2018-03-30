@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			.div01{
+				width: 100px;
+				height: 100px;
+				background-color: red;
+				position: absolute;
+				left: 0;
+				top: 0;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="div01"></div>
+	</body>
+	<script type="text/javascript">
+	/*var a = undefined;--未定义：var a;不能做计算
+	 *var a = null;为空--可以做计算，相当于0；
+	 *var a =NaN;犯错的原因不同，不能做计算。
+	 * 以上三种相对布尔值都是false。
+	 */
+	
+		
+		var div01 = document.querySelector(".div01");
+		var x = 0;
+		var y = 0;
+		
+		var offsetX =0;
+		var offsetY =0;
+		
+		var  isDown=false;
+		    
+		   div01.addEventListener("mousedown",function(e){
+		    	offsetX = e.offsetX;
+		    	offsetY = e.offsetY;
+		    	x = e.pageX  - offsetX;
+		        y =	e.pageY  - offsetY;
+		        div01.style.left=x+"px";
+		        div01.style.top=y+"px";
+		        isDown=true;
+		    });
+		    
+		   document.addEventListener("mousemove",function(e){
+		   	    //鼠标点击的坐标- 鼠标相对div的坐标
+		   	     //没有点击向下，不让执行
+		   	     if(!isDown){
+		   	     	return;
+		   	     }
+		   	    x = e.pageX - offsetX  ;
+		        y =	e.pageY - offsetY ;
+		        div01.style.left=x+"px";
+		        div01.style.top=y+"px";
+		        if(){
+		        	
+		        }
+		   	
+		   });
+		    
+		   document.addEventListener("mouseup",function(e){
+		   	     isDown=false;
+		   	    //鼠标点击的坐标- 鼠标相对div的坐标
+		   	     //没有点击向下，不让执行
+		   	    
+		   }); 
+		    
+		//screenX  代表是整个屏幕
+		//pageX    代表的是整个页面（包括滚动区域），除掉地址栏和标题栏。
+		//clientX  代表当前可视区域
+		//offsetX  代表标签自己的区域 
+		
+		
+	
+	</script>
+</html>

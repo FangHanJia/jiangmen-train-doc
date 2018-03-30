@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<ul>
+			<li data-index = "1"></li>
+			<li data-index = "1"></li>
+			<li data-index = "1"></li>
+			<li></li>
+			<li></li>
+		</ul>
+	</body>
+	<script type="text/javascript">
+		/**
+		 * cookie:容量：4k
+		 * localStroge容量：5M
+		 */
+		
+	
+	 
+	   //一、自定义属性
+		var li01 = document.querySelector("ul>li");
+		//获取数据
+		var data_index = li01.dataset.index;
+		//设置数据
+		   li01.dataset.index = "afdadf";
+		//java的写法
+		var age  = li01.getAttribute("age");
+		    li01.setAttribute("age",8);
+//		    alert(li01.getAttribute("data-index"));
+
+
+		//二、持久化存储数据
+		//类似map
+		var name = localStorage.getItem("name");
+			alert(name);
+		//存储一：特点是关闭浏览器再打开还在
+		localStorage.setItem("name","BiG");
+		sessionStorage.setItem("name","BiG");
+		
+		//cookie的默认过期时间：
+		var date = new Date();
+		date.setMonth(date.getMonth()+1);
+		document.cookie = "age=18 ;"+"expires=" +date.toGMTString();
+		document.cookie = "jd=jjjj ;"+"expires="+dade.toGMTString();
+		document.cookie = "age=18 ;"+"expires=" +(-1);
+		document.cookie = "name=BiG";
+		console.log(getValue("name"));
+		
+		function getValue(key){
+			var keyValues =document.cookie.split(";");
+			for(var i =0 ;i<keyValues.length;i++){
+				var keyValue = keyValues[i].split("=");
+				var keySp  =keyValue[0].replace(" "," ");
+				var valueSp  =keyValue[1].replace(" "," ");
+				if(keySp==key){
+					return valueSp;
+				}
+			}
+			return null;
+		}
+		function getData(){
+			var text = document.cookie;
+			//将text用";"进行切割
+			 var xy =text.split(";");
+			 var x =xy[0];
+			 var y =xy[1];
+			 alert(x);
+			 alert(y);
+		}
+		//
+//		console.log(getData("name"));
+//		function getData(key){
+//			var xy = document.cookie.split(";");
+//			for(var i=0;i<xy.length;i++){
+//				if(xy[i].indexOf(key)>=0){
+//					var value =xy[i].substr(xy[i].indexOf("=")+1)
+//					return value;
+//				}
+//			}
+//			return null;
+//		}
+	</script>
+</html>

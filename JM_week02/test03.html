@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			
+			li{
+				list-style: none;
+			}
+			.top{
+				width: 450px;
+				height: 50px;
+				/*background-color: red;*/
+				position: absolute;
+				left: 100%;
+				top: 10px;
+				transform: translateX(-100%);
+			}
+			.top>.top_ul>li{
+				/*width: 200px;*/
+				float: left;
+				margin-left:10px ;
+				/*position: absolute;*/
+			}
+			.top>.top_ul>li>a{
+				color: gray;
+			}
+			.top>.top_ul>li>a:hover{
+				/*display: inline-block;*/
+				/*background-color: blue;*/
+				color: blue;
+			}
+			
+			.top .top_ul li .top_ul2 li {
+				
+				display: none;
+				
+			}
+			.top>.top_ul>li:hover .top_ul2 li{
+				display: block;
+			}
+			
+			.top .top_ul li .top_ul3 li{
+				/*width: 40px;*/
+				/*height: 30px;*/
+				display: none;
+				/*position: absolute;*/
+
+			}
+			.top>.top_ul{
+				position: absolute;
+			}
+			.top>.top_ul>li:hover .top_ul3 li{
+				display: block;
+			}
+			
+			.top_ul2>li>p{
+				text-align: center;
+				font-size: 16px;
+				line-height: 30px;
+				color: deepskyblue;
+				
+			}
+			.top_ul2>li{
+				background-color: lightgrey;
+			}
+			.top_ul2>li>img{
+				width: 60px;
+				height: 60px;
+			}
+			.content img{
+				width: 220px;
+				height: 100px;
+				position: absolute;
+				top: 10%;
+				left: 50%;
+				transform: translate(-70%,-100px);
+
+			}
+			
+			#seareach{
+				
+				width: 540px;
+				height: 32px;
+				border: 1px solid gray;
+				border-right:0 ;
+				position: absolute;
+			}
+			#but{
+				width: 100px;
+				height: 34px;
+				background-color: dodgerblue;
+				color: whitesmoke;
+				border: 0 solid ghostwhite;
+				position: absolute;
+				left: 540px;
+			}
+			.content{
+				width: 700px;
+				height: 200px;
+				position: absolute;
+				left: 50%;
+				top: 50%;
+				transform: translate(-50%,-50%);
+				
+			}
+			.content a p{
+				text-align: center;
+				margin-top:50px ;
+				margin-left:-100px ;
+				font-size: 14px;
+				color: gray;
+				text-decoration:none;
+				
+			}
+			.foot{
+				width: 540px;
+				height: 250px;
+				position: absolute;
+				top: 100%;
+				left: 50%;
+				transform: translate(-50%,-50%);
+			}
+			.foot>img{
+				/*margin-bottom: 80px;*/
+				width: 60px;
+				height: 60px;
+				position: absolute;
+				left: 50%;
+				top: 0;
+				transform: translate(-50%,-100%);
+			}
+			
+			.foot>.foot_ul>li{
+				float: left;
+				margin-right:40px ;
+			}
+			
+			.foot .foot_ul li p{
+				font-size: 12px;
+				color: gray;
+			}
+		
+			
+		</style>
+	</head>
+	<body>
+		<div class="top">
+			<ul class="top_ul">
+				<li><a href="#">新闻</a></li>
+				<li><a href="#">hao123</a></li>
+				<li><a href="#">地图</a></li>
+				<li><a href="#">视频</a></li>
+				<li><a href="#">贴吧</a></li>
+				<li><a href="#">学术</a></li>
+				<li><a href="#">登录</a></li>
+				<li><a href="#">设置</a>
+					<ul class="top_ul3">
+						<li><p>高级设置</p></li>
+						<li><p>高级搜索</p></li>
+						<li><p>关于预测</p></li>
+						<li><p>历史</p></li>
+					</ul>
+				</li>
+				
+				<li><a href="#">更多产品</a>
+					<ul class="top_ul2">
+				<li><img src="img/02.jpg"/><p>糯米</p></li>
+				<li><img src="img/02.jpg"/><p>音乐</p></li>
+				<li><img src="img/02.jpg"/><p>知道</p></li>
+				<li><img src="img/02.jpg"/><p>图片</p></li>
+			       </ul>
+				</li>
+			</ul>
+			
+		</div>
+		<div class="content">
+			<img src="img/baidu.png" /><br />
+			<input type="text" name="seareach" id="seareach" value="" /><input type="button" name="" id="but" value="百度一下" /><br />
+			<a href="http://www.taobao.com" target="_blank"><p>双11全球狂欢疯抢中</p></a>
+		</div>
+		<div class="foot">
+			<img src="img/02.jpg" /><br />
+			<ul class="foot_ul">
+				<li><p>把百度设为主页</p></li>
+				<li><p>关于百度</p></li>
+				<li><p>About&nbsp;Baidu</p></li>
+				<li><p>百度推广</p></li><br />
+				<li><p>&copy;2017&nbsp;Baidu&nbsp;使用百度前必读&nbsp;意见反馈</p></li>
+				<li><p>京公网安备11000000000020000001号</p></li>
+				
+			</ul>
+			
+		</div>
+	</body>
+</html>

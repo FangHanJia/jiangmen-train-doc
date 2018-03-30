@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				padding: 0;
+				margin: 0;
+			}
+			.box{
+				height: 700px;
+				width: 1200px;
+				margin: 0 auto;
+				border: 1px solid gainsboro;
+				padding: 20px;
+			}
+			.box p{
+				position: absolute;
+				top: -20px;
+				left: 50%;
+				transform: translateX(-50%);
+			}
+			.box img{
+				width: 500px;
+				height: 200px;
+			}
+			.box div{
+				position: relative;
+				float: left;
+				margin: 50px;
+			}
+			.box div:hover img{
+				box-shadow: 5px 10px 10px gray;
+				transition: all 2s;
+				transform:  rotate(360deg) scale(0.4); 
+			}
+		</style>
+	</head>
+	<body>
+		<!--容器：来装载生成的界面-->
+		<div class="box">
+			
+		</div>
+	</body>
+	<script type="text/javascript">
+		//jsonObject
+		var div00 = {title:"春",imgPath:"img/bz2.jpg"};
+		var div01 = {title:"夏",imgPath:"img/bz3.jpg"};
+		var div02 = {title:"秋",imgPath:"img/bz4.jpg"};
+		var div03 = {title:"冬",imgPath:"img/bz5.jpg"};
+		//jsonArray包含jsonObject
+		var divs = [div00,div01,div02,div03];
+		//转化为json字符串
+		var jsonString  = JSON.stringify(divs);
+		//转化为json对象
+		var jsonArr =  JSON.parse(jsonString);
+		
+		//获取容器标签
+		var box = document.querySelector(".box");
+		
+		//生成div来装载数据
+		for( var i=0;i<jsonArr.length;i++){
+			var div = document.createElement("div");
+			var p = document.createElement("p");
+			var img = document.createElement("img");
+			
+			/*
+			 * jsonArray的取值：对象[索引]
+			 * jsonObject的取值：对象.属性。
+			 */
+			p.innerText = jsonArr[i].title;
+			img.src  =jsonArr[i].imgPath;
+			div.appendChild(p);
+			div.appendChild(img);
+			box.appendChild(div);
+			
+			//css
+			img.className = "img";
+			div.className = "div";
+		}
+	</script>
+</html>

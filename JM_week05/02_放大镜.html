@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				padding: 0;
+				margin: 0;
+			}
+			body,html{
+				background-color: black;
+			}
+			
+			.container .imgList>li>img{
+				width: 100px;
+				height: 300px;
+				
+			}
+			.container .imgList>li{
+				list-style: none;
+			}
+			.container .imgList{
+				width: 100px;
+				height: 700px;
+				overflow: scroll;
+				float: left;
+			}
+			.container .currentImg{
+				float: left;
+				height: 700px;
+				width: 400px;
+				position: relative;
+			}
+			.container .currentImg>img{
+				height: 700px;
+				width: 400px;
+			}
+			.container .currentImg .block{
+				width: 100px;
+				height: 200px;
+				background-color: rgba(255,255,255,0.5);
+				position: absolute;
+				left: 0;
+				top: 0;
+			}
+			.container .currentImg .currentImgOver{
+				height: 700px;
+				width: 400px;
+				position: absolute;
+				left: 0;
+				top: 0;
+			}
+			.container .bigImg{
+				float: left;
+				height: 700px;
+				width: 400px;
+				overflow: hidden;
+				position: relative;
+				margin-left: 150px;
+			}
+			.container .bigImg>img{
+				height: 400%;
+				width: 400%;
+				position: absolute;
+				left: 0;
+				top: 0;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="container">
+			<ul class="imgList">
+				<li><img src="imgBig/001.jpg"  /></li>
+				<li><img src="imgBig/002.jpg"  /></li>
+				<li><img src="imgBig/003.jpg" alt="" /></li>
+				<li><img src="imgBig/004.jpg" alt="" /></li>
+				<li><img src="imgBig/005.jpg" alt="" /></li>
+				<li><img src="imgBig/006.jpg" alt="" /></li>
+				<li><img src="imgBig/007.jpg" alt="" /></li>
+				<li><img src="imgBig/008.jpg" alt="" /></li>
+			</ul>
+			<div class="currentImg">
+				<img src="imgBig/001.jpg" />
+				<div class="block">
+				</div>
+				<div class="currentImgOver"></div>
+			</div>
+			<div class="bigImg">
+				<img src="imgBig/001.jpg" />
+			</div>
+		</div>
+	</body>
+	<script type="text/javascript">
+		//获取左边所有的图片
+		var leftImgs = document.querySelectorAll(".imgList>li>img");
+//		var currentImgDiv = document.querySelector(".currentImg");
+		//获取当前图片div
+		var currentImgDiv = document.querySelector(".currentImg .currentImgOver");
+		//获取当前所有图片
+		var currentImg = document.querySelector(".currentImg>img");
+		//获取放大的图片div
+		var bigImg = document.querySelector(".bigImg>img");
+		//获取当前图片的小块
+		var block = document.querySelector(".currentImg .block");
+		
+		//遍历切换图片
+		for(var i=0;i<leftImgs.length;i++){
+			leftImgs[i].addEventListener("click",function(e){
+				//e.target--代表当前被点击的标签
+				currentImg.src = e.target.src;
+				bigImg.src = e.target.src;
+			});
+		}
+			
+		currentImgDiv.addEventListener("mouseenter",function(e){
+			block.style.display = "block";
+			bigImg.style.display = "block";
+		});
+		currentImgDiv.addEventListener("mouseleave",function(e){
+			block.style.display = "none";
+			bigImg.style.display = "none";
+		});
+		currentImgDiv.addEventListener("mousemove",function(e){
+			
+			var  x =e.offsetX - block.offsetWidth/2;
+			var  y =e.offsetY - block.offsetHeight/2;
+			block.style.left = x +"px";
+			block.style.top = y +"px";
+			//防止小块出去
+			
+			var max = currentImgDiv.offsetWidth-block.offsetWidth;
+			var maxHeight = currentImgDiv.offsetHeight-block.offsetHeight;
+			//左边
+			if(parseInt( block.style.left)<0){
+				block.style.left = "0px";
+			}
+			//右边
+			if(parseInt( block.style.left)>max){
+				block.style.left = max +"px";
+			}
+			//上边
+			if(parseInt( block.style.top)<0){
+				block.style.top = "0px";
+			}
+			//下边
+			if(parseInt( block.style.top)>maxHeight){
+				block.style.top =  maxHeight+"px";
+			}
+			/**
+			 * 放大镜的原理：
+			 * 			大图移动的距离是小图的N倍。 N=大图/小图
+			 */
+			var n  = parseInt(bigImg.offsetWidth/currentImgDiv.offsetWidth);
+			bigImg.style.left = -parseInt(block.style.left)*n+"px";
+			bigImg.style.top = -parseInt(block.style.top)*n+ "px";
+			
+		});
+		
+	</script>
+</html>

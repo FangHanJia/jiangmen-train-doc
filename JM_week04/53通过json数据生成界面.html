@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+
+	<body>
+
+		<div class="boxs">
+
+		</div>
+
+	</body>
+	<script type="text/javascript">
+		var box00 = {
+			title: "标题1",
+			imgPath: "img/lx1.png"
+		};
+		var box01 = {
+			title: "标题2",
+			imgPath: "imgwall/2.jpg"
+		};
+		var box02 = {
+			title: "标题3",
+			imgPath: "imgwall/2.jpg"
+		};
+		var box03 = {
+			title: "标题4",
+			imgPath: "imgwall/2.jpg"
+		};
+		var box04 = {
+			title: "标题5",
+			imgPath: "imgwall/3.jpg"
+		};
+		var boxs = [box00, box01, box02, box03, box04];
+		var jsonStr = JSON.stringify(boxs);
+		//下面才是代码
+		var boxs = document.querySelector(".boxs");
+		var json = JSON.parse(jsonStr);
+		for (var i = 0; i < json.length; i++) {
+			var div = document.createElement("div");
+			var p = document.createElement("p");
+			var img = document.createElement("img");
+			p.innerText = json[i].title;
+			img.src = json[i].imgPath;
+			div.appendChild(p);
+			div.appendChild(img);
+			boxs.appendChild(div);
+		}
+	</script>
+
+</html>

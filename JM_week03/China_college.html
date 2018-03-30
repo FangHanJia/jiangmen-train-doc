@@ -1,0 +1,652 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			* {
+				padding: 0;
+				margin: 0;
+			}
+			
+			body,
+			html {
+				width: 100%;
+				height: 100%;
+			}
+			/*头部*/
+			
+			header {
+				width: 100%;
+				height: 546px;
+				/*background-color: cadetblue;*/
+			}
+			
+			header nav {
+				padding: 20px 5px 42px 46px;
+				box-sizing: border-box;
+			}
+			/*中间*/
+			
+			section {
+				width: 100%;
+				height: 4200px;
+				background-color: cadetblue;
+			}
+			section .div01{
+				width: 100%;
+				height: 422px;
+				background-color: gainsboro;
+				padding: 30px 162px;
+				box-sizing: border-box;
+			}
+			section .div01>h3{
+				font-size: 30px;
+				font-weight: 100;
+				margin-bottom: 20px;
+			}
+			section .div01>ul>li{
+				display: block;
+				list-style: none;
+				float: left;
+				width: 234px;
+				height: 272px;
+				margin-right: 22px;
+				background-color: white;
+				overflow: hidden;
+			}
+			section .div01>ul>li:nth-child(5){
+				margin-right: 0;
+			}
+			section .div01>ul>li:hover img{
+				/*box-shadow: 0px 2px 10px gray;*/
+				transform: scale(1.1);
+					
+			}
+			section .div01>ul>li:hover{
+				box-shadow: 0px 2px 10px gray;
+				/*transform: scale(1.1);*/
+					
+			}
+			
+			section .div01>ul>li>img{
+				width: 234px;
+				border-bottom: 1px solid white ;
+				transition: all 0.5s; 
+			}
+			
+			section .div01>ul>li>.div01_span_1{
+				font-size: 14px;
+			}
+			section .div01>ul>li>.div01_span_2{
+				font-size: 12px;
+				color: forestgreen;
+			}
+			section .div01>ul>li>.div01_span_3{
+				font-size: 12px;
+				color: gray;
+			}
+			section .div01>ul>li>.div01_span_4{
+				font-size: 14px;
+				color: gray;
+			}
+			
+			section .div01>ul>li>span{
+				margin-left: 10px;
+				line-height: 25px;
+			}
+			
+			/*第二个盒子*/
+			section>.div02{
+				width: 100%;
+				height: 300px;
+				background-color: cornflowerblue;
+				padding: 35px 164px;
+				box-sizing: border-box;
+				/*margin: 0 auto;*/
+			}
+			section>.div02>div{
+				width: 406px;
+				height: 232px;
+				float: left;
+				background-color: white;
+				margin-right: 18px;
+				/*margin: 0 auto;*/
+			}
+			section>.div02>div:nth-child(3){
+				margin-right:0px;
+			}
+			section>.div02>div:nth-child(1){
+				background-color: cornflowerblue;
+				text-align: center;
+			}
+			
+			section>.div02>.div02_left>img{
+				margin-top: 20px;
+			}
+			section>.div02>.div02_left>h3{
+				color: white;
+				font-size: 25px;
+				margin-top: 10px;
+			}
+			section>.div02>.div02_left>input{
+				background-color: limegreen;
+				color: white;
+				border: none;
+				padding: 10px 36px;
+				font-size: 18px;
+				margin-top: 15px;
+			}
+			section>.div02>.div02_left>input:hover{
+				background-color: goldenrod;
+			}
+			section>.div02>.div02_left>p{
+				font-size: 16px;
+				color: white;
+				margin-top: 15px;
+				font-weight: 100;
+			}
+			
+			
+			
+			section>.div02>.div02_middle{
+				padding: 20px;
+				box-sizing: border-box;
+			}
+			section>.div02>.div02_middle img{
+				width: 32px;
+				height: 32px;
+				border-radius:16px ;
+				position: relative;
+				transform: translateY(-5px);
+			}
+			section>.div02>.div02_middle>ul>li{
+				list-style: none;
+				float: left;
+				margin-right: 10px;
+				display: inline-block;
+			}
+			section>.div02>.div02_middle>ul>li{
+				font-size: 14px;
+				color: gray;
+			}
+			section>.div02>.div02_middle>ul>li:nth-child(3){
+				margin-right: 100px;
+				background-color: gold;
+				color:white ;
+				/*padding: 3px;*/
+				font-size: 14px;
+				/*box-sizing: border-box;*/
+			}
+			
+			section>.div02>.div02_middle>ul>li:nth-child(5){
+				margin-right: 0;
+				color: black;
+			}
+			section>.div02>.div02_middle>p{
+				position: relative;
+				top: 60px;
+				font-size: 18px;
+			}
+			section>.div02>.div02_middle:hover {
+				box-shadow: 0px 5px 15px gray;
+			}
+			
+			footer {
+				width: 100%;
+				height: 770px;
+				background-color: grey;
+			}
+			
+			header nav {
+				height: 104px;
+				width: 100%;
+				background-color: white;
+				position: relative;
+				z-index: 2;
+			}
+			
+			header nav>img {
+				height: 32px;
+				width: 242px;
+				position: absolute;
+				top: 0;
+				left: 0;
+				transform: translate(40px, 20px);
+			}
+			
+			header nav>._upper_right {
+				display: block;
+				height: 32px;
+				width: 444px;
+				position: absolute;
+				top: 0;
+				right: 0;
+				transform: translate(-40px, 20px);
+				/*border: 1px solid red;*/
+				text-align: center;
+				line-height: 32px;
+			}
+			
+			header nav>._upper_right>li {
+				float: left;
+				list-style: none;
+				margin-left: 10px;
+				font-size: 14px
+			}
+			
+			header nav>._upper_right>li:nth-child(1) {
+				margin-left: 0px;
+			}
+			
+			header nav>._upper_right>li>img {
+				position: relative;
+				top: 6px;
+				margin-right: 10px;
+			}
+			
+			header nav>._upper_right>li>a {
+				text-decoration: none;
+				color: gray;
+			}
+			
+			header nav>._upper_right>li>span {
+				margin-right: 10px;
+			}
+			
+			header nav>._upper_right>li>#input_text {
+				width: 220px;
+				height: 30px;
+				outline: none;
+				border: 1px solid forestgreen;
+				border-right: none;
+				position: relative;
+				top: -1px;
+				padding-left: 5px;
+			}
+			
+			header nav>._upper_right>li>#input_button {
+				width: 40px;
+				height: 32px;
+				outline: none;
+				border: none;
+				position: relative;
+				left: -4px;
+				background-color: forestgreen;
+				color: white;
+			}
+			
+			header nav>.nav_left_lower {
+				/*width: 326px;*/
+				height: 16px;
+				display: block;
+				position: absolute;
+				bottom: 0;
+				left: 0;
+				transform: translate(40px, -20px);
+			}
+			
+			header nav>.nav_left_lower>li {
+				float: left;
+				list-style: none;
+				margin-right: 40px;
+			}
+			
+			header nav>.nav_low_right {
+				height: 14px;
+				display: block;
+				position: absolute;
+				bottom: 0;
+				right: 0;
+				transform: translate(-40px, -20px);
+			}
+			
+			header nav>.nav_low_right>li {
+				float: left;
+				list-style: none;
+				margin-left: 30px;
+			}
+			
+			header nav>.nav_low_right>li:nth-child(1)>a {
+				color: forestgreen;
+			}
+			
+			header nav>.nav_low_right>li>a {
+				text-decoration: none;
+				font-size: 14px;
+				color: gray;
+			}
+			
+			header nav>.nav_low_right>li:nth-child(2)>.nav_low_right_hadden {
+				/*padding: 5px;*/
+				/*box-sizing: border-box;*/
+				background-color: white;
+				position: relative;
+				top: 5px;
+				right: 5px;
+				/*				z-index: 2;
+*/
+			}
+			
+			header nav>.nav_low_right>li:nth-child(2)>.nav_low_right_hadden>li {
+				list-style: none;
+				font-size: 14px;
+				line-height: 20px;
+				text-align: right;
+			}
+			
+			header nav>.nav_low_right>li:nth-child(2)>.nav_low_right_hadden {
+				display: none;
+			}
+			
+			header nav>.nav_low_right>li:nth-child(2):hover .nav_low_right_hadden {
+				display: block;
+				/*position: relative;
+				top: 5px;
+				right: 5px;*/
+			}
+			
+			header .header_pic {
+				height: 384px;
+				width: 100%;
+				background-color: darkslateblue;
+				/*overflow: hidden;*/
+				/*margin: 0 auto;*/
+				text-align: center;
+				position: relative;
+				z-index: 1;
+			}
+			
+			header .header_pic>img {
+				height: 384px;
+				width: 858px;
+			}
+			
+			header .header_pic .header_pic_left .upper {
+				display: block;
+				width: 200px;
+				height: 384px;
+				background-color: black;
+				position: absolute;
+				top: 0;
+				left: 10%;
+				/*transform: translateX(-20%);*/
+				transform: translateX(5px);
+				line-height: 43px;
+			}
+			
+			header .header_pic .header_pic_left .upper>li,
+			.upper>li>.down>li {
+				list-style: none;
+				color: white;
+				text-align: left;
+				position: relative;
+				left: 50%;
+				transform: translateX(-5%);
+			}
+			
+			header>.header_pic>.header_pic_left>.upper>li>.down {
+				width: 200px;
+				/*height: 200px;*/
+				background-color: black;
+				position: absolute;
+				top: 100%;
+				left: 5%;
+				transform: translate(-50%,-20%);
+				line-height: 43px;
+				display: none;
+			}
+			
+			/*隐藏的方法：一级监听，二级显示或者隐藏*/
+			header>.header_pic>.header_pic_left>.upper>li:nth-child(9):hover .down{
+				display: block;
+			}
+			header>.header_pic>.header_pic_right{
+				background-color: antiquewhite;
+				height: 282px;
+				width: 200px;
+				position: absolute;
+				top: 50%;
+				left: 84%;
+				transform: translate(-55%,-50%);
+				text-align: center;
+				padding: 15px 5px 10px 10px;
+				box-sizing: border-box;
+			}
+			header>.header_pic>.header_pic_right>p{
+				font-size: 18px;
+				color: gray;
+				/*margin-top: 10;*/
+				/*margin-bottom: 15px;*/
+				
+			}
+			header>.header_pic>.header_pic_right>img{
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				transform: translate(-50%,-60%);
+			}
+			header>.header_pic>.header_pic_right>#login_btn{
+				background-color: forestgreen;
+				border: none;
+				padding: 4% 35%;
+				position: absolute;
+				top: 70%;
+				left: 50%;
+				transform: translateX(-50%);
+				font-size: 16px;
+				color: white;
+			}
+			header>.header_pic>.header_pic_right>#login_btn:hover{
+				background-color: yellowgreen;
+			}
+			
+			header>.header_pic>.header_pic_right>span{
+				display: block;
+				font-size: 12px;
+				color: gray;
+				position: absolute;
+				bottom: 10%;
+				left: 15%;
+				transform: translateY(50%);
+				
+			}
+			
+			
+			header .header_text {
+				height: 62px;
+				width: 100%;
+				background-color: white;
+				/*text-align: center;*/
+				padding: 1% 12%;
+				box-sizing: border-box;
+			}
+			header .header_text>ul>li{
+				/*display: block;*/
+				float: left;
+				list-style: none;
+				margin:0 40px ;
+			}
+			header .header_text>ul>li>a{
+				text-decoration: none;
+				font-size: 18px;
+				color: #228B22;
+			}
+			header .header_text>ul>li>a>img{
+				height: 35px;
+				width: 110px;
+			}
+			/*底部*/
+			
+			footer .footer_text {
+				width: 100%;
+				height: 558px;
+				background-color: greenyellow;
+			}
+			
+			footer .copyright {
+				width: 100%;
+				height: 212px;
+			}
+		</style>
+	</head>
+
+	<body>
+		<header>
+			<nav>
+				<img src="zd/B34DC36428D2D51B8EF5EE2C83CE9BF2.png" />
+				<ul class="_upper_right">
+					<li><img src="zd/75298CEB06474FD85CBC95D208B44F8E.png" />
+						<a href="#">客户端</a>
+					</li>
+					<li><input type="text" placeholder="搜索感兴趣的课程" id="input_text" />
+						<input type="button" value="搜索" id="input_button" />
+					</li>
+					<li>
+						<span>登陆</span><span>|</span>注册
+					</li>
+				</ul>
+				<ul class="nav_left_lower">
+					<li>课程</li>
+					<li>名校</li>
+					<li>学&bull;问</li>
+					<li>学校云</li>
+					<li>考研</li>
+				</ul>
+				<ul class="nav_low_right">
+					<li><a href="#">网易云课堂</a></li>
+					<li><a href="#">更多课程频道</a>
+						<ul class="nav_low_right_hadden">
+							<li>大学先修课</li>
+							<li>职业教育课程</li>
+						</ul>
+					</li>
+				</ul>
+			</nav>
+			<div class="header_pic">
+				<img src="zd/a2040e3c-8362-4167-b2c5-1b5c90c7b239.jpg" />
+				<!--<img src="zd/a2040e3c-8362-4167-b2c5-1b5c90c7b239.jpg" />
+				<img src="zd/a2040e3c-8362-4167-b2c5-1b5c90c7b239.jpg" />
+				<img src="zd/a2040e3c-8362-4167-b2c5-1b5c90c7b239.jpg" />
+				<img src="zd/a2040e3c-8362-4167-b2c5-1b5c90c7b239.jpg" />-->
+				<div class="header_pic_left">
+					<ul class="upper">
+						<li>计算机</li>
+						<li>经济管理</li>
+						<li>考研</li>
+						<li>心理学</li>
+						<li>外语</li>
+						<li>文学历史</li>
+						<li>艺术设计</li>
+						<li>工学</li>
+						<li>更多
+							<ul class="down">
+								<li>理学</li>
+								<li>生命科学</li>
+								<li>哲学</li>
+								<li>法学</li>
+								<li>教育教学</li>
+							</ul>
+						</li>
+					</ul>
+				</div>
+				<div class="header_pic_right">
+					<p>免费学习名校名师的<br />精品课程</p>
+					<img src="zd/49E89BEA3F1B3F1AC788F5F94C4A457F.png"/><br />
+					<input id="login_btn" type="button" value="登陆" /><br />
+					<span>网易和高等教育出版社出品</span>
+				</div>
+			</div>
+			<div class="header_text">
+				<ul>
+					<li><a href="#">全部146所合作高校</a></li>
+					<li><a href="#"><img src="zd/0E1CA0462AD847E2F1ECE099FB9F658D.png"/></a></li>
+					<li><a href="#"><img src="zd/0E1CA0462AD847E2F1ECE099FB9F658D.png"/></a></li>
+					<li><a href="#"><img src="zd/0E1CA0462AD847E2F1ECE099FB9F658D.png"/></a></li>
+					<li><a href="#"><img src="zd/0E1CA0462AD847E2F1ECE099FB9F658D.png"/></a></li>
+					<li><a href="#"><img src="zd/0E1CA0462AD847E2F1ECE099FB9F658D.png"/></a></li>
+				</ul>
+			</div>
+		</header>
+		<section>
+			<div class="div01">
+				<h3>推荐课程</h3>
+				<ul>
+					<li>
+						<img src="zd/DEBB7689BCC42453A2F9CD41AF984CEA.png" />
+						<span class="div01_span_1">大学英语——交互英语(二)</span><br />
+						<span class="div01_span_2">进行至第1周</span><br />
+						<span class="div01_span_3">中南大学</span><br />
+						<span class="div01_span_4">学号英语,走遍天下都不怕</span>
+					</li>
+					<li>
+						<img src="zd/FC0B70B6F649345AD0AB9B66856EFF69.jpg" />
+						<span class="div01_span_1">大学英语——交互英语(二)</span><br />
+						<span class="div01_span_2">进行至第1周</span><br />
+						<span class="div01_span_3">中南大学</span><br />
+						<span class="div01_span_4">学号英语,走遍天下都不怕</span>
+					</li>
+					<li>
+						<img src="zd/36BC1F265CE3928FB14E508437213477.jpg" />
+						<span class="div01_span_1">大学英语——交互英语(二)</span><br />
+						<span class="div01_span_2">进行至第1周</span><br />
+						<span class="div01_span_3">中南大学</span><br />
+						<span class="div01_span_4">学号英语,走遍天下都不怕</span>
+					</li>
+					<li>
+						<img src="zd/8CDF4669BA5BE27A5614BB713C81B115.jpg" />
+						<span class="div01_span_1">大学英语——交互英语(二)</span><br />
+						<span class="div01_span_2">进行至第1周</span><br />
+						<span class="div01_span_3">中南大学</span><br />
+						<span class="div01_span_4">学号英语,走遍天下都不怕</span>
+					</li>
+					<li>
+						<img src="zd/D88AE3DD528E2F3C72AE7CED2C65C089.png" />
+						<span class="div01_span_1">大学英语——交互英语(二)</span><br />
+						<span class="div01_span_2">进行至第1周</span><br />
+						<span class="div01_span_3">中南大学</span><br />
+						<span class="div01_span_4">学号英语,走遍天下都不怕</span>
+					</li>
+				</ul>
+			</div>
+			<div class="div02">
+				<div class="div02_left">
+					<img src="zd/discussion.png"/>
+					<h3>一起学习&nbsp;一起成长</h3>
+					<input type="button" value="加入中国大学MOOC" />
+					<p>已有151.09万老师和同学在此发言讨论</p>
+				</div>
+				<div class="div02_middle">
+					<ul>
+						<li><img src="zd/8DB22FD17D82AA3E31F0B20BDCA990A2.jpg"/></li>
+						<li>张晓文</li>
+						<li>老师</li>
+						<li>来自</li>
+						<li>婚恋-职场-人格</li>
+					</ul>
+					<br />
+					<p>[老师分享]中国式打压教育|"我都是为了<br/>你好啊。"</p>
+				</div>
+				<div class="div02_middle">
+					<ul>
+						<li><img src="zd/8DB22FD17D82AA3E31F0B20BDCA990A2.jpg"/></li>
+						<li>张晓文</li>
+						<li>老师</li>
+						<li>来自</li>
+						<li>婚恋-职场-人格</li>
+					</ul>
+					<br />
+					<p>[老师分享]中国式打压教育|"我都是为了<br/>你好啊。"</p>
+				</div>
+				</div>
+				
+			</div>
+		</section>
+		<footer>
+			<div class="footer_text"></div>
+			<div class="copyright"></div>
+		</footer>
+	</body>
+
+</html>

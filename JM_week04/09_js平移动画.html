@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			.div01{
+				position: relative;
+				border-radius: 100px;
+				width: 200px;
+				height: 200px;
+				background-color: blanchedalmond;
+			}
+			.div02{
+				position: absolute;
+				top: 0;
+				left: 50%;
+				transform: translateX(-50%);
+				width: 20px;
+				height: 20px;
+				background-color: green;
+				/*transform: rotate();*/
+			}
+			
+		</style>
+	</head>
+	<body>
+		<div class="div01">
+			<div class="div02"></div>
+		</div>
+		<input type="button" id="btn"  value="启动"/>
+	</body>
+	<script type="text/javascript">
+		var div01 = document.querySelector(".div01");
+		var i=0;
+		
+		function transX(){
+//			if(i==1800){
+//				clearInterval(timer);
+//				div01.style.transform = "translateX(0px)";
+//
+//			}else{
+//				div01.style.transform = "translateX("+(i=i+5)+"px)";
+				div01.style.transform = "rotate("+(i=i+50)+"deg)";
+
+//			}
+		}
+		var timer = null;
+		var isRun = false;
+		var btn = document.querySelector("#btn");
+		
+		btn.onclick = function(){
+			if(!isRun){
+				 timer = setInterval(transX,10);
+				 isRun = true;
+			}else{
+				clearInterval(timer);
+				isRun = false;
+				var deg = i%360;
+				alert(deg);
+			}
+			
+		};
+		
+		
+		
+	</script>
+</html>

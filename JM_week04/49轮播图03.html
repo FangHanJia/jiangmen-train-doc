@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			* {
+				padding: 0;
+				margin: 0;
+			}
+			
+			.container {
+				margin: 100px auto;
+				width: 640px;
+				height: 320px;
+				position: relative;
+				overflow: hidden;
+				border: 2px solid blue;
+			}
+			
+			.container >li {
+				position: absolute;
+				top: 0px;
+				left: 640px;
+				list-style: none;
+			}
+			
+			.container .first {
+				left: 0px;
+			}
+		</style>
+	</head>
+
+	<body>
+		<!--容器-->
+		<ul class="container">
+			<!--图片-->
+			<li class="first"><img src="imgfq/img1.jpg" /></li>
+			<li><img src="imgfq/img2.jpg" /></li>
+			<li><img src="imgfq/img3.jpg" /></li>
+			<li><img src="imgfq/img4.jpg" /></li>
+			<li><img src="imgfq/img5.jpg" /></li>
+		</ul>
+	</body>
+	<script type="text/javascript">
+		var imgs = document.querySelectorAll(".container>li")
+		var index = 0;
+		var distance = 0;
+		var rightDistance = 640;
+		setInterval(function() {
+			
+			centerRunLeftAnim(imgs[index++]);
+			
+			if (index == imgs.length - 1) {
+				index = 0;
+			}
+			
+			rightRunCenterAnim(imgs[index]);
+			
+		}, 2000);
+
+		function centerRunLeftAnim(ele) {
+			var centerRunLeft = setInterval(function() {
+				if (distance <= -640) {
+					//到达最左边，停止动画
+					clearInterval(centerRunLeft);
+					//同时自己还要回原位。
+					ele.style.left = 640 + "px";
+					//数据还原
+					distance = 0;
+				} else {
+					ele.style.left = (distance = distance - 80) + "px";
+				}
+			}, 50);
+		}
+
+		function rightRunCenterAnim(ele) {
+			var rightRunCenter = setInterval(function() {
+				if (rightDistance <= 0) {
+					//到达中间，停止动画
+					clearInterval(rightRunCenter);
+					ele.style.left = "0px";
+					//数据还原
+					rightDistance = 640;
+				} else {
+					ele.style.left = (rightDistance = rightDistance - 80) + "px";
+				}
+			}, 50);
+		}
+	</script>
+
+</html>

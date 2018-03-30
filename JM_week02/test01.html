@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				padding: 0;
+				margin: 0;
+			}
+			/*ul无序排列的宽高大小样式*/
+			.list{
+				width: 736px;
+				height: 78px;
+				border: 1px solid aquamarine;
+				margin: 50px auto;
+			}
+			
+			/*li的宽高大小样式*/
+			.list li{
+				list-style: none;
+				float: left;
+				background: url(img/nav.png);
+				height: 78px;
+				/*每个li的宽度大小是否一致*/
+				/*width: 120px;*/
+			}
+			/*每个li的鼠标滑动，并显示一张新的图片*/
+			.list li:hover{
+				background: url(img/nav-on.png);
+			}
+			/*对li里的每个宽进行设置样式*/
+			.list li:nth-child(1){
+				width: 100px;
+			}
+			.list li:nth-child(2){
+				width: 124px;
+				/*默认是左上角排列图片，需要往右移动前面选项卡的宽度*/
+				background-position: -100px;
+			}
+			.list li:nth-child(3){
+				width: 146px;
+				background-position: -224px;
+			}
+			.list li:nth-child(4){
+				width: 120px;
+				background-position: -370px;
+			}
+			.list li:nth-child(5){
+				width: 124px;
+				background-position: -490px;
+			}
+			.list li:nth-child(6){
+				width: 122px;
+				background-position: -614px;
+			}
+			
+			
+			/*logo*/
+			.logo{
+				width: 400px;
+				height: 75px;
+				margin: 100px auto;
+				border: 1px solid #7FFFD4;
+			}
+			.logo li{
+				list-style: none;
+				float: left;
+				width: 85px;
+				height: 75px;
+				background: url(img/logo.png);
+			}
+			.logo li:nth-child(1){
+				/*第一个参数是x轴，2个y轴。/*/
+				background-position: 0 -100px;
+			}
+			.logo li:nth-child(2){
+				/*第一个参数是x轴，2个y轴。/*/
+				background-position: -145px -100px;
+			}
+			.logo li:nth-child(3){
+				/*第一个参数是x轴，2个y轴。/*/
+				background-position: 0 -190px;
+			}
+			.logo li:nth-child(1){
+				/*第一个参数是x轴，2个y轴。/*/
+				background-position: -145px -170px;
+			}
+			
+</style>
+	</head>
+	<body>
+		<div class="div01">
+			<ul class="list">
+				<li><a href="http://www.taobao.com" target="_blank"></a></li>
+				<li><a href="http://www.taobao.com" target="_blank"></a></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+			</ul>
+		</div>
+		
+		
+		<ul class="logo">
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+		</ul>
+	</body>
+</html>

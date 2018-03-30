@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			.div_boxs{
+				position: relative;
+				margin: 200px auto;
+				width: 600px;
+				height: 220px;
+				overflow: hidden;
+			}
+			
+			.div_boxs>.div_box{
+				width: 3000px;
+				height: 220px;
+				position: absolute;
+				left: 0;
+			}
+			.div_boxs>.div_box>img{
+				width: 600px;
+				height: 220px;
+			}
+			
+			
+		</style>
+	</head>
+	<body>
+		<div class="div_boxs">
+			<div class="div_box">
+					<img src="img/lx1.png"/><img src="img/lx2.png"/><img src="img/lx3.png"/><img src="img/lx4.png"/><img src="img/lx1.png"/>
+			</div>
+			
+		</div>
+		<input type="button" value="left" id="btn_left"/>
+			<input type="button" value="right" id="btn_right"/>
+			<input type="button" value="stop" id="btn_stop"/>
+	</body>
+	<script type="text/javascript">
+	    var btn_left = document.querySelector("#btn_left");
+	    var btn_right = document.querySelector("#btn_right");
+	    var btn_stop = document.querySelector("#btn_stop");
+		var imgs = document.querySelector(".div_boxs>.div_box");
+		var imgsCount =document.querySelectorAll(".div_box>img").length;
+		var distance = 0;
+		var leftMaxDistance =parseInt(getComputedStyle(imgs).width)/imgsCount *(imgsCount-1)
+		var leftRun;
+		var rightRun;
+		btn_stop.onclick = function(){
+			clearInterval(leftRun);
+			clearInterval(rightRun);
+		};
+		btn_left.onclick = function(){
+			clearInterval(rightRun);
+			left();
+		};
+		btn_right.onclick = function(){
+			clearInterval(leftRun);
+			right();
+		};
+		
+		function left(){
+						clearInterval(leftRun);
+		leftRun =  setInterval( function(){
+			
+			if(distance<=-leftMaxDistance){
+				distance=0;
+			}
+			imgs.style.left = (distance = distance-5)+"px";
+			
+		},50);
+		};
+		function right(){
+						clearInterval(rightRun);
+				rightRun = setInterval( function(){
+			
+			if(distance>=0){
+				distance=-leftMaxDistance;
+			}
+			imgs.style.left = (distance = distance+5)+"px";
+			
+		},50);
+		};
+		
+		
+	</script>
+</html>

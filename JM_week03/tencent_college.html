@@ -1,0 +1,1201 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>首页&nbsp;|&nbsp;腾讯大学</title>
+		<style type="text/css">
+			* {
+				padding: 0;
+				margin: 0;
+			}
+			/*定义页面的伸缩*/
+			
+			body,
+			html {
+				height: 100%;
+				width: 100%;
+			}
+			/*头部*/
+			
+			header {
+				height: 686px;
+				width: 100%;
+				/*background-color: beige;*/
+			}
+			/**/
+			
+			header nav {
+				width: 100%;
+				height: 78px;
+				/*background-color: burlywood;*/
+				/*1水平偏移，2垂直偏移，3虚化度4，颜色*/
+				box-shadow: 0px 1px 10px gray;
+				/*让nav处于上层*/
+				margin-bottom: 4px;
+				position: relative;
+				z-index: 1;
+			}
+			/*nav盒子*/
+			header nav .serarch_input{
+				width: 340px;
+				height: 50px;
+				border-top:2px solid red;
+				background-color: white;
+				position: relative;
+				transform: translateX(400px);
+				display: none;
+				padding: 8px;
+				box-sizing: border-box;
+			}
+			header nav .serarch_input .serarch_text{
+				position: relative;
+				width: 320px;
+				height: 30px;
+			}
+			header nav .serarch_input .serarch_text #inpup_text{
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 280px;
+				height: 30px;
+				border: 1px solid darkgray;
+				padding: 0 10px;
+				box-sizing: border-box;
+				border-right:none ;
+				outline: none;
+				color: gray;
+			}
+			header nav .serarch_input .serarch_text #inpup_btn{
+				position: absolute;
+				top: 0;
+				right: 0;
+				width: 40px;
+				height:30px ;
+				border: none;
+				background-color: orangered;
+				color: white;
+				outline: none;
+
+			}
+			
+			
+			header nav>div>ul {
+				width: 736px;
+				display: inline-block;
+				/*background-color: red;*/
+				/*border: 1px solid aqua;*/
+			}
+			/*----*/
+			/*---*/
+			
+			header nav>div>a>img {
+				height: 30px;
+			}
+			
+			
+			header nav>div {
+				width: 1175px;
+				margin: 0 auto;
+			}
+			
+			header nav>div>a {
+				display: inline-block;
+			}
+			/*重复*/
+			
+			header nav>div>ul>li {
+				float: left;
+				list-style: none;
+				height: 78px;
+				/*添加*/
+				background-image: url(tx/nav.png);
+				/*width: 100px;*/
+			}
+			
+			header nav>div>ul>li:hover {
+				background-image: url(tx/nav-on.png);
+			}
+			
+			header nav>div>ul>li:nth-child(1) {
+				width: 100px;
+				background-image: url(tx/nav-on.png);
+			}
+			
+			header nav>div>ul>li:nth-child(2) {
+				width: 124px;
+				background-position: -100px;
+			}
+			
+			header nav>div>ul>li:nth-child(3) {
+				width: 146px;
+				background-position: -224px;
+			}
+			
+			header nav>div>ul>li:nth-child(4) {
+				width: 120px;
+				background-position: -370px;
+			}
+			
+			header nav>div>ul>li:nth-child(5) {
+				width: 124px;
+				background-position: -490px;
+			}
+			/*搜索*/
+			
+			header nav>div>.serarch {
+				/*width: 32px;
+				height: 32px;*/
+				margin-bottom: 20px;
+				border-right: 1px solid gainsboro;
+				padding-right: 17px;
+			}
+			/*header nav>div>.serarch:hover{
+				background-image: url(tx/search_hover.png);
+				background-position: -30px;
+			}*/
+			
+			header nav>div>a {
+				/*font-size: 12px;*/
+				color: gray;
+				/*margin-left: 10px;*/
+				/*text-align: center;*/
+			}
+			
+			header nav>div>a:hover {
+				color: dodgerblue;
+			}
+			/*login*/
+			
+			header nav>div>.login {
+				text-align: center;
+				font-size: 12px;
+				position: relative;
+				left: 22px;
+				bottom: 15px;
+			}
+			
+			section {
+				width: 100%;
+				height: 2060px;
+				padding-top: 20px;
+				background-color: gainsboro;
+			}
+			
+			footer {
+				width: 100%;
+				height: 510px;
+				background-color: lightgray;
+			}
+			/*head下的loop_pic盒子*/
+			
+			header .loop_pic {
+				width: 1440px;
+				height: 360px;
+				margin: 0 auto;
+				/*一旦自己设置了范围，那么超过自己范围就隐藏*/
+				overflow: hidden;
+				background-color: aqua;
+				position: relative;
+			}
+			
+			header .loop_pic .loop_dots>li {
+				float: left;
+				list-style: none;
+				background: url(tx/banner-counter.png);
+				width: 16px;
+				height: 16px;
+				/*设置间隙*/
+				margin-right: 10px;
+			}
+			
+			header .loop_pic .loop_dots {
+				position: absolute;
+				right: 186px;
+				bottom: 20px;
+				/*background-color: red;*/
+				z-index: 2;
+			}
+			/*自己：宽度不一样，就得放在底色的上面*/
+			
+			header .loop_pic .loop_dots>li:hover {
+				background: url(tx/banner-counter-on.png);
+			}
+			/*换底色*/
+			
+			header .loop_pic .loop_dots>li:nth-child(2) {
+				background-position: -26px;
+			}
+			
+			header .loop_pic .loop_dots>li:nth-child(3) {
+				background-position: -52px;
+			}
+			
+			header .loop_pic .loop_dots>li:nth-child(4) {
+				background-position: -78px;
+			}
+			/*head下的live盒子*/
+			
+			header .live {
+				/*border: 1px solid green;*/
+				width: 1028px;
+				height: 242px;
+				margin: 0 auto;
+				background: url(tx/live-bg.png);
+				position: relative;
+			}
+			
+			header .live>img {
+				padding: 12px 0px;
+			}
+			
+			header .live .live_content .live_pic {
+				float: left;
+				width: 225px;
+				margin-left: 50px;
+				/*border: 1px solid red;*/
+			}
+			
+			header .live .live_content .live_text {
+				float: right;
+				width: 520px;
+				margin-right: 200px;
+			}
+			
+			header .live .live_text .time_icon {
+				/*span标签没有宽高*/
+				display: inline-block;
+				background: url(tx/icons.png);
+				width: 12px;
+				height: 12px;
+				background-position-y: -6px;
+				margin-right: 10px;
+			}
+			
+			header .live .live_text .time {
+				color: gray;
+				font-size: 13px;
+				display: inline-block;
+			}
+			
+			header .live .live_text>p:nth-of-type(1) {
+				margin-top: 10px;
+				margin-bottom: 30px;
+			}
+			/*三点*/
+			
+			header .live .live_left,
+			header .live .live_right {
+				width: 20px;
+				height: 30px;
+				display: block;
+				background: url(tx/sliders-btn.png);
+				position: absolute;
+			}
+			
+			header .live .live_left {
+				/*background-color: red;*/
+				background-position: -5px, -10px;
+				top: 50%;
+				left: 0;
+				transform: translateY(-50%);
+			}
+			
+			header .live .live_right {
+				background-position: -5px -105px;
+				top: 50%;
+				right: 0;
+				transform: translateY(-50%);
+			}
+			
+			header .live .live_bottom {
+				display: block;
+				background: url(tx/slider-close.png);
+				position: absolute;
+				bottom: 0;
+				left: 50%;
+				width: 40px;
+				height: 19px;
+				transform: translateX(-50%);
+				/*background-color: red;*/
+			}
+			/*section下的container盒子*/
+			
+			section .container {
+				width: 1068px;
+				height: 100%;
+				margin: 0 auto;
+				padding-top: -20px;
+				/*border: 1px solid yellow;*/
+			}
+			/*section下的container盒子下的content盒子*/
+			
+			section .container .content {
+				float: left;
+				width: 780px;
+				height: 100%;
+				/*background-color: white;*/
+			}
+			
+			section .container .content>div {
+				background-color: whitesmoke;
+				width: 780px;
+				margin-bottom: 20px;
+				/*怪异盒模型：宽度不受内外边距影响*/
+				padding: 20px;
+				box-sizing: border-box;
+			}
+			
+			section .container .content .hot_class {
+				height: 355px;
+			}
+			
+			section .container .content .hot_class .hot_title,
+			.share_title ,.elaborate_title,.special_title,{
+				height: 24px;
+				/*background-color: red;*/
+				text-align: left;
+				font-weight: 100;
+				line-height: 24px;
+				margin-bottom: 20px;
+			}
+			
+			section .container .content .hot_class .hot_title>img,
+			.share_title>img,.elaborate_title>img,.special_title>img {
+				margin-right: 13px;
+				/*微调用相对定位*/
+				position: relative;
+				top: 3px;
+			}
+			
+			section .container .content .hot_class .hot_title>a,
+			.share_title>a,.elaborate_title>a,.special_title>a {
+				float: right;
+				text-decoration: none;
+				color: gray;
+				font-size: 14px;
+			}
+			
+			section .container .content .hot_class .hot_content>li {
+				width: 230px;
+				height: 275px;
+				float: left;
+				overflow: hidden;
+				margin-right: 25px;
+				background-color: white;
+			}
+			
+			section .container .content .hot_class .hot_content>li:nth-child(1)>img {
+				border-bottom: 3px solid dodgerblue;
+			}
+			
+			section .container .content .hot_class .hot_content>li:nth-child(2)>img {
+				border-bottom: 3px solid orange;
+			}
+			
+			section .container .content .hot_class .hot_content>li:nth-child(3)>img {
+				border-bottom: 3px solid green;
+			}
+			
+			section .container .content .hot_class .hot_content>li:nth-child(3) {
+				margin-right: 0px;
+			}
+			
+			section .container .content .hot_class .hot_content>li>img {
+				height: 160px;
+			}
+			
+			section .container .content .hot_class .hot_content>li>a {
+				text-decoration: none;
+				color: black;
+				font-size: 12px;
+				margin-left: 8px;
+				margin-right: 4px;
+			}
+			
+			section .container .content .hot_class .hot_content>li>p {
+				color: gray;
+				font-size: 12px;
+				margin-left: 8px;
+				margin-right: 4px;
+				height: 50px;
+				width: 190px;
+				overflow: hidden;
+				text-overflow: ellipsis;
+				display: -webkit-box;
+				/**/
+				-webkit-line-clamp: 3;
+				-webkit-box-orient: vertical;
+			}
+			
+			section .container .content .good_share {
+				height: 500px;
+			}
+			
+			/*========================================*/
+			
+			
+			section .container .content .good_share .good_content .live_content{
+				background-color:white;
+				width: 740px;
+				height: 125px;
+				margin-bottom: 10px;
+			}
+			section .container .content .good_share .good_content .live_content .live_pic {
+				float: left;
+				width: 120px;
+				height: 88px;
+				margin-right: 20px;
+				margin: 20px 20px;
+			}
+			
+			section .container .content .good_share .good_content>li {
+				list-style: none;
+				display: block;
+			}
+			
+			section .container .content .good_share .good_content .live_content .live_text .time_icon {
+				/*span标签没有宽高*/
+				display: inline-block;
+				background: url(tx/icons.png);
+				width: 12px;
+				height: 12px;
+				background-position-y: -6px;
+				margin-right: 10px;
+			}
+			
+			section .container .content .good_share .good_content .live_content .live_text .time {
+				color: gray;
+				font-size: 10px;
+				display: inline-block;
+			}
+			section .container .content .good_share .good_content .live_content .live_text {
+				font-size: 14px;
+				padding: 20px;
+				
+			}
+			
+			/*section .container .content .good_share .good_content .live_content .live_text>p:nth-of-type(1) {
+				margin-top: 10px;
+				margin-bottom: 30px;
+			}*/
+			/*=======================================*/
+			
+			
+			section .container .content .special_class {
+				height: 355px;
+			}
+			
+			section .container .content .elaborate_class {
+				height: 790px;
+				margin-bottom: 0;
+			}
+			section .container .content .elaborate_class .elaborate_content{
+				width: 735px;
+				height: 735px;
+				/*border: 1px solid red;*/
+			}
+			section .container .content .elaborate_class .elaborate_content>li{
+				float: left;
+				width: 350px;
+				height: 370px;
+				list-style: none;
+				margin-bottom: 10px;
+				
+			}
+			section .container .content .elaborate_class .elaborate_content>li>img{
+				width: 350px;
+
+			}
+			section .container .content .elaborate_class .elaborate_content>li:nth-child(2n+1){
+				margin-right: 35px;
+			}
+			section .container .content .elaborate_class .elaborate_content>li>h3>span{
+				display: inline-block;
+				width: 290px;
+				height: 27px;
+				background: url(tx/bout-title-bg.png);
+			}
+			section .container .content .elaborate_class .elaborate_content>li>h3>a{
+				display: inline-block;
+				height: 7px;
+				width: 34px;
+				text-decoration: none;
+				color: gray;
+			}
+			section .container .content .elaborate_class .elaborate_content>li>h3{
+				margin-bottom: 20px;
+			}
+			section .container .content .elaborate_class .elaborate_content>li:nth-child(2)>h3>span{
+				background-position: 0px -24px;
+			}
+			section .container .content .elaborate_class .elaborate_content>li:nth-child(3)>h3>span{
+				background-position: 0px -48px;
+			}
+			section .container .content .elaborate_class .elaborate_content>li:nth-child(4)>h3>span{
+				background-position: 0px -72px;
+			}
+			section .container .content .elaborate_class .elaborate_content>li>p{
+				font-size: 13px;
+				/*margin: 8px 0;*/
+			}
+			section .container .content .elaborate_class .elaborate_content>li>p:nth-of-type(2){
+				color: gray;
+			}
+			
+			
+			
+			/*section下的container盒子下的live盒子*/
+			
+			section .container .left {
+				float: right;
+				height: 100%;
+				width: 265px;
+				background-color: white;
+				position: relative;
+				
+			}
+			
+			section .container .left .left_top,.left_middle,.left_bottom{
+				padding: 20px;
+				box-sizing: border-box;
+			}
+			section .container .left .left_top{
+				height: 1164px;
+				width: 100%;
+			}
+			section .container .left .left_top>h3,.left_bottom>h3{
+				height: 24px;
+				/*background-color: red;*/
+				text-align: left;
+				font-weight: 100;
+				line-height: 24px;
+				margin-bottom: 20px;
+				
+			}
+			section .container .left .left_top>h3>img,.left_bottom>h3>img{
+				margin-right: 13px;
+				/*微调用相对定位*/
+				position: relative;
+				top: 3px;
+			}
+			/*重点*/
+			section .container .left .left_top>span{
+				margin-bottom: 20px;
+				/*text-align: center;*/
+				display: inline-block;
+				width: 226px;
+				height: 34px;
+				background: url(tx/rank-tab-gray-bg.png) no-repeat center;
+			}
+			section .container .left .left_top>span>a{
+				display: inline-block;
+				text-align: center;
+				width: 112px;
+				height: 34px;
+				/*margin-right:20px ;*/
+				text-decoration: none;
+				color: gray;
+				font-size: 14px;
+				border-left:1px solid gainsboro ;
+			}
+			section .container .left .left_top>span>a:nth-child(1){
+				border-top: 1px solid gainsboro;
+			}
+			section .container .left .left_top>span>a:nth-child(2){
+				border-bottom: 1px solid gainsboro;
+			}
+			
+			section .container .left .left_top>.pic>li {
+				list-style: none;
+				height: 160px;
+				width: 226px;
+				margin-bottom:10px ;
+			}
+			section .container .left .left_top>.pic>li>img {
+				/*height: 160px;*/
+				width: 226px;
+			}
+			section .container .left .left_top>.pic>li>a {
+				display: inline-block;
+				/*float: left;*/
+				height: 24px;
+				width: 226px;
+				line-height: 24px;
+				/*line-height: 26px;*/
+				text-decoration: none;
+				font-size: 12px;
+				/*background-color: #000000;*/
+				background-color: rgba(0,0,0,0.2);
+				color:white ;
+				position: relative;
+				transform: translateY(-28px);
+
+			}
+			section .container .left .left_top>.pic>li>a>span {
+				color: white;
+				width: 20px;
+				height: 24px;
+				margin-right: 20px;
+				background-color: red;
+				display: block;
+				float: left;
+				text-align: center;
+				
+			}
+			section .container .left .left_top>.pic>li:nth-child(2)>a>span{
+				background-color: orange;
+			}
+			section .container .left .left_top>.pic>li:nth-child(3)>a>span{
+				background-color: darkred;
+			}
+			section .container .left .left_top>.pic>li:nth-child(4)>a>span{
+				background-color: orange;
+			}
+			section .container .left .left_top>.pic>li:nth-child(5)>a>span{
+				background-color: orangered;
+			}
+			section .container .left .left_top>.text>li{
+				list-style: none;
+				margin-bottom: 15px;
+				line-height: 25px;
+				
+			}
+			section .container .left .left_top>.text>li>a{
+				text-decoration: none;
+				color: gray;
+			}
+			section .container .left .left_top>.text>li>a>span{
+				color: white;
+				width: 20px;
+				height: 24px;
+				margin-right: 20px;
+				background-color: green;
+				display: block;
+				float: left;
+				text-align: center;
+			}
+			
+			section .container .left .left_middle{
+				height: 400px;
+				width: 100%;
+				/*border: 1px solid blue;*/
+				/*padding: 20px 0px;
+				box-sizing: border-box;*/
+			}
+			section .container .left .left_middle>img{
+				height: 176px;
+				width: 226px;
+				margin-bottom: 10px;
+			}
+			
+			section .container .left .left_middle>p{
+				margin-top: 5px;
+				font-size: 14px;
+				line-height: 25px;
+			}
+			
+			section .container .left .left_bottom{
+				height: 450px;
+				width: 100%;
+				/*padding: 10px 0;*/
+				/*border-top:1px solid gainsboro;*/
+				position: relative;
+				/*border-top:2px solid groove ;*/
+			}
+			section .container .left .left_bottom>p{
+				margin-top: 10px;
+				font-size: 14px;
+			}
+			section .container .left .left_bottom .bottom_text{
+				width: 200px;
+				height: 120px;
+				background-color: gray;
+				position: absolute;
+				left: 50%;
+				top: 15%;
+				transform: translate(-50%,50%);
+				text-align: center;
+			}
+			section .container .left .left_bottom .bottom_text>h2{
+				margin-top: 20px;
+			}
+			section .container .left .left_bottom .bottom_text>a{
+				display: block;
+				background-color: black;
+				color: white;
+				width: 158px;
+				height: 40px;
+				text-align: center;
+				line-height: 40px;
+				position: absolute;
+				top: 70%;
+				left: 50%;
+				transform: translate(-50%,-50%);
+				text-decoration: none;
+			}
+			section .container .left .aside_pic{
+				text-align: center;
+				padding: 4px;
+				box-sizing: border-box;
+				height: 164px;
+				width: 120px;
+				background-color: white;
+				position: absolute;
+				top: 0;
+				left: 100%;
+				transform: translateX(10px);
+			}
+				section .container .left .aside_pic>img{
+					width: 108px;
+					height: 108px;
+				}
+			section .container .left .aside_pic>p{
+				font-size: 14px;
+			}
+			
+			
+			/*footer的partner盒子*/
+			
+			footer .partner {
+				height: 390px;
+				width: 100%;
+				background-color: white;
+				position: relative;
+			}
+			footer  .partner{
+				padding: 2% 18% ;
+				box-sizing: border-box;
+			}
+			
+			footer .partner .upper{
+				/*padding: 20px;
+				box-sizing: border-box;*/
+				height: 190px;
+				/*height: 100%;*/
+				width: 800px;
+				/*border: 1px solid red;*/
+				position: relative;
+			}
+			footer .partner .upper>img{
+				margin-right:40px ;
+				margin-bottom: 20px;
+			}
+			footer .partner .upper .open_span{
+				display: block;
+				margin-bottom: 5px;
+			}
+			footer .partner .upper .more_span{
+				display: block;
+				position: absolute;
+				/*top: 100%;*/
+				bottom: 0;
+				left: 50%;
+				transform: translateY(-10px);
+			}
+			footer .partner .right{
+				position: absolute;
+				top: 10%;
+				left: 70%;
+			}
+			
+			footer .partner .lower{
+				width: 800px;
+				margin-top: 20px;
+			}
+			footer .partner .lower>span{
+				display: block;
+				margin-bottom: 5px;
+			}
+			footer .partner .lower>ul>li{
+				list-style: none;
+				float: left;
+				margin-left: 20px;
+				margin-bottom: 10px;
+			}
+			
+			footer .partner .right>ul>li{
+				list-style: none;
+				line-height: 30px;
+			}
+			/*footer .partner .right>ul>li:nth-child(2){
+				background-color: none;
+			}*/
+			/*底部的partner盒子*/
+			
+			footer .copyright {
+				width: 100%;
+				height: 126px;
+				background-color: darkgray;
+				position: relative;
+			}
+			
+			footer .copyright .copyright_text {
+				text-align: center;
+				font-size: 12px;
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				transform: translate(-50%, -50%);
+				line-height: 25px;
+			}
+			
+			footer .copyright .copyright_text .first_p {
+				font-size: 14px
+			}
+			
+			#split_line{
+				width: 100%;
+				height: 4px;
+
+			}
+			#split_line>li{
+				float: left;
+				width: 25%;
+				height: 4px;
+				list-style: none;
+				background-color: dodgerblue;
+			}
+			#split_line>li:nth-child(2){
+				
+				background-color: red;
+			}
+			#split_line>li:nth-child(3){
+				
+				background-color: orange;
+			}
+			#split_line>li:nth-child(4){
+				
+				background-color: cadetblue;
+			}
+		</style>
+	</head>
+
+	<body>
+		<!--头部-->
+		<header>
+			<nav>
+				<div>
+					<img src="tx/logo.png" />
+					<ul>
+						<li></li>
+						<li></li>
+						<li></li>
+						<li></li>
+						<li></li>
+					</ul>
+					<img src="tx/search.png" class="serarch" />
+					<a href="#" class="login"><img src="tx/qq.png" /><br />登录
+					</a>
+				</div>
+				<div class="serarch_input">
+					<div class="serarch_text">
+						<input id="inpup_text" type="text" value="马化腾演讲" /><input id="inpup_btn" type="button" value="搜索"/>
+					</div>
+				</div>
+			</nav>
+			<div class="loop_pic">
+				<img src="tx/1508920480342.jpg" />
+				<img src="tx/1508920480342.jpg" />
+				<img src="tx/1508920480342.jpg" />
+				<img src="tx/1508920480342.jpg" />
+				<ul class="loop_dots">
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+				</ul>
+			</div>
+			<div class="live">
+				<img src="tx/live-title.png" />
+				<div class="live_content">
+					<img class="live_pic" src="tx/1510296158520.jpg" />
+					<div class="live_text">
+						<h3>JetBbrains开发日</h3>
+						<p><span class="time_icon"></span><span class="time">2017年11月15号</span></p>
+						<p>Kotlin 编程语言的设计和创始人 Andrey Breslav 、JetBrains 开发者宣传推广
+							副总裁 Hadi Hariri做客腾大，与你来一场技术盛宴。</p>
+					</div>
+				</div>
+				<a class="live_left" href="#"></a>
+				<a class="live_right" href="#"></a>
+				<a class="live_bottom" href="#"></a>
+
+			</div>
+		</header>
+
+		<!--中间-->
+		<section>
+			<div class="container">
+				<div class="content">
+					<div class="hot_class">
+						<h3 class="hot_title"><img src="tx/icon-lesson.png" />热门课程
+							<a href="#">more</a> 
+						</h3>
+						<ul class="hot_content">
+							<li><img src="tx/1510243888411.png" />
+								<a href="#"> 纪念碑谷2:背后的灵感</a>
+								<p>本期大师班推出特别版，专程邀请了 《纪念碑谷2》游戏主美、艺术总监David</p>
+							</li>
+							<li><img src="tx/1509872683613.jpg" />
+								<a href="#"> 霍金&nbsp;:&nbsp;突破摄星的目标在于实...</a>
+								<p>11月5日，在腾讯we大会上，著名物理学家霍金以视频演讲的方式向人们阐释了</p>
+							</li>
+							<li><img src="tx/1509450636364.png" />
+								<a href="#">青山周平-我的设计理想国</a>
+								<p>B.L.U.E.建筑事务所创始人。通过巧妙的空间设计完美解决了普通家庭的居</p>
+							</li>
+						</ul>
+					</div>
+					<div class="good_share">
+						<h3 class="share_title"><img src="tx/icon-share.png" />干货分享
+							<a href="#">more</a> 
+						</h3>
+						<ul class="good_content">
+							<li>
+								<div class="live_content">
+									<img class="live_pic" src="tx/1508857761348.jpg" />
+									<div class="live_text">
+										<h3>刚刚,鹅厂迄今为止最权威的产品心得总结发布了!</h3>
+										<p><span class="time_icon"></span><span class="time">2017年11月15号</span></p>
+										<p>19年来，腾讯做过数千款产品，有几千名产品经理，每一位产品经理都有自己秘而不宣的绝学，在这些口口相传的“民间秘笈”背后，腾讯的产品心...</p>
+									</div>
+								</div
+							</li>
+							<li>
+								<div class="live_content">
+									<img class="live_pic" src="tx/1508048115727.png" />
+									<div class="live_text">
+										<h3>广受外媒好评!5名校招小鲜鹅原创游戏<三竹里></h3>
+										<p><span class="time_icon"></span><span class="time">2017年11月15号</span></p>
+										<p>这一次，腾讯游戏给行业带来了一个小惊喜。</p>
+									</div>
+								</div
+							</li>
+							<li>
+								<div class="live_content">
+									<img class="live_pic" src="tx/1507690117725.png" />
+									<div class="live_text">
+										<h3>八天八夜,腾讯大学带领生态圈高管的美国有学都学到了什么</h3>
+										<p><span class="time_icon"></span><span class="time">2017年11月15号</span></p>
+										<p>不少人好奇Amazon、LinkedIn、Airbnb、Starbucks等国际领先企业是如何缔造商业传奇，这次腾讯大学“远航计划”带着腾讯生态圈的高管们...</p>
+									</div>
+								</div
+							</li>
+						</ul>
+						</div>
+						<!--<div class="special_class">-->
+							<div class="hot_class">
+						<h3 class="hot_title"><img src="tx/icon-lesson.png" />热门课程
+							<a href="#">more</a> 
+						</h3>
+						<ul class="hot_content">
+							<li><img src="tx/1510243888411.png" />
+								<a href="#"> 纪念碑谷2:背后的灵感</a>
+								<p>本期大师班推出特别版，专程邀请了 《纪念碑谷2》游戏主美、艺术总监David</p>
+							</li>
+							<li><img src="tx/1509872683613.jpg" />
+								<a href="#"> 霍金&nbsp;:&nbsp;突破摄星的目标在于实...</a>
+								<p>11月5日，在腾讯we大会上，著名物理学家霍金以视频演讲的方式向人们阐释了</p>
+							</li>
+							<li><img src="tx/1509450636364.png" />
+								<a href="#">青山周平-我的设计理想国</a>
+								<p>B.L.U.E.建筑事务所创始人。通过巧妙的空间设计完美解决了普通家庭的居</p>
+							</li>
+						</ul>
+					</div>
+						<div class="elaborate_class">
+							<h3 class="elaborate_title"><img src="tx/icon-lesson.png" />精品课程
+							<a href="#">more</a> 
+						</h3>
+						
+						<ul class="elaborate_content">
+							<li>
+								<h3><span></span>
+								<a href="#">more</a></h3>
+								<img src="tx/1509509065544.png" />
+								<p>腾讯视频通过以视频内容生态为基础</p>
+								<p>腾讯视频通过以视频内容生态为基础，实现营销价值的升级是腾讯视频连接内容，引爆营销的方法。</p>
+							</li>
+							<li>
+								<h3><span></span>
+								<a href="#">more</a></h3>
+								<img src="tx/1505999675421.png" />
+								<p>腾讯视频通过以视频内容生态为基础</p>
+								<p>腾讯视频通过以视频内容生态为基础，实现营销价值的升级是腾讯视频连接内容，引爆营销的方法。</p>
+							</li>
+							<li><h3><span></span>
+								<a href="#">more</a></h3>
+								<img src="tx/1509095853300.png" />
+								<p>腾讯视频通过以视频内容生态为基础</p>
+								<p>腾讯视频通过以视频内容生态为基础，实现营销价值的升级是腾讯视频连接内容，引爆营销的方法。</p>
+							</li>
+							<li>
+								<h3><span></span>
+								<a href="#">more</a></h3>
+								<img src="tx/1510296158520.jpg" />
+								<p>腾讯视频通过以视频内容生态为基础</p>
+								<p>腾讯视频通过以视频内容生态为基础，实现营销价值的升级是腾讯视频连接内容，引爆营销的方法。</p>
+							</li>
+						</ul>
+						</div>
+					</div>
+					<aside class="left">
+						<div class="left_top">
+							<h3><img src="tx/icon-rank.png"/>排行榜</h3>
+							<span><a href="#">最新排行</a><a href="#">新课上线</a></span>
+							<ul class="pic">	
+								<li>
+									<img src="tx/1452663224623.jpg"/>
+									<a href="#"><span>1</span><p>张小龙:微信四大价值观</p></a>
+								</li>
+								<li><img src="tx/1452663224623.jpg"/>
+									<a href="#"><span>2</span><p>张小龙:微信四大价值观</p></a>
+								</li>
+								<li>
+									<img src="tx/1452663224623.jpg"/>
+									<a href="#"><span>3</span><p>张小龙:微信四大价值观</p></a>
+								</li>
+								<li>
+									<img src="tx/1452663224623.jpg"/>
+									<a href="#"><span>4</span><p>张小龙:微信四大价值观</p></a>
+								</li>
+								<li>
+									<img src="tx/1452663224623.jpg"/>
+									<a href="#"><span>5</span><p>张小龙:微信四大价值观</p></a>
+								</li>
+								</ul>
+								
+							<ul class="text">
+								<li>
+									<a href="#"><span>5</span><p>张小龙:微信四大价值观</p></a>
+								</li>
+								<li>
+									<a href="#"><span>5</span><p>张小龙:微信四大价值观</p></a>
+								</li>
+								<li>
+									<a href="#"><span>5</span><p>张小龙:微信四大价值观</p></a>
+								</li>
+								<li>
+									<a href="#"><span>5</span><p>张小龙:微信四大价值观</p></a>
+								</li>
+								<li>
+									<a href="#"><span>5</span><p>张小龙:微信四大价值观</p></a>
+								</li>
+							</ul>
+						</div>
+						<hr />
+						<div class="left_middle">
+							<img src="tx/1437012075279.png" />
+							<h3>腾讯大学</h3>
+							<p>腾讯大学作为腾讯特色的学习交流平台，服务于腾讯合作伙伴及用户，面向互联网产业链，传播腾讯经验，分享行业知识及优秀实践，助力合作伙伴成长，推动开放共赢的互联网生态圈的建立。</p>
+						</div>
+						<hr />
+						<div class="left_bottom">
+							<h3><img src="tx/icon-phone.png"/>联系我们</h3>
+							<p>合作：university@tencent.com</p>
+							<p>QQ：2813343187</p>
+							<div class="bottom_text">
+								<h2>在线考试</h2>
+								<a href="#">ENTER入口</a>
+							</div>
+						</div>
+						<div class="aside_pic">
+							<p>手机看直播学干货</p><img src="tx/qr.jpg"/><p>关注腾讯大学公号</p>
+						</div>
+					</aside>
+				</div>
+		</section>
+		<ul id="split_line">
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+		</ul>
+		<!--底部-->
+		<footer>
+			<div class="partner">
+				<div class="upper">
+					<span class="open_span">开放平台</span><br />
+					<img src="tx/ke.png"/>
+					<img src="tx/hitem3.jpg" />
+					<img src="tx/ieg.png" />
+					<img src="tx/ke.png"/>
+					<img src="tx/hitem3.jpg" />
+					<img src="tx/ieg.png" />
+					<img src="tx/ke.png"/>
+					<img src="tx/hitem3.jpg" />
+					<img src="tx/ieg.png" />
+					<img src="tx/ke.png"/>
+					<img src="tx/hitem3.jpg" />
+					<img src="tx/ieg.png" />
+					<img src="tx/ke.png"/>
+					<img src="tx/hitem3.jpg" />
+					<img src="tx/ieg.png" />
+					<span class="more_span">更多</span>
+				</div>
+				<div class="lower">
+					<span>合作伙伴</span>
+					<ul>
+						<li>腾讯云论坛</li>
+						<li>腾讯云论坛</li>
+						<li>腾讯云论坛</li>
+						<li>腾讯云论坛</li>
+						<li>腾讯云论坛</li>
+						<li>腾讯云论坛</li>
+						<li>腾讯云论坛</li>
+						<li>腾讯云论坛</li>
+						<li>腾讯云论坛</li>
+						<li>腾讯云论坛</li>
+						<li>腾讯云论坛</li>
+						<li>腾讯云论坛</li>
+						<li>腾讯云论坛</li>
+						<li>腾讯云论坛</li>
+						<li>腾讯云论坛</li>
+						<li>腾讯云论坛</li>
+						<li>腾讯云论坛</li>
+						<li>腾讯云论坛</li>
+						<li>腾讯云论坛</li>
+					</ul>
+				</div>
+				<div class="right">
+					<ul>
+						<li>收听微博</li>
+						<li><img src="tx/opentweibo.png"/></li>
+						<li>关注空间</li>
+						<li><img src="tx/openzone.png"/></li>
+					</ul>
+				</div>
+				
+			</div>
+			<div class="copyright">
+				<div class="copyright_text">
+					<p class="first_p">服务协议&nbsp;&nbsp;|&nbsp;&nbsp;隐私政策&nbsp;&nbsp;|&nbsp;&nbsp;版权保护投诉指引</p>
+					<p>Copyright&nbsp;&copy;&nbsp;&nbsp;1998 - 2017 Tencent. All Rights Reserved.</p>
+					<p>腾讯公司 版权所有</p>
+				</div>
+			</div>
+		</footer>
+	</body>
+
+	<script type="text/javascript">
+		var search = document.querySelector(".serarch");
+		var search_input = document.querySelector(".serarch_input");
+		search.onmouseenter = function(){
+			search.src = "tx/search_hover.png";
+			search_input.style.display="block";
+		};
+		search.onmousemove = function(){
+			search_input.style.display="block";
+		};
+		search.onmouseleave = function(){
+			search.src = "tx/search.png";
+			search_input.style.display="block";
+		};
+		
+		search_input.onmouseleave = function(){
+				search_input.style.display="none";
+		};
+		
+	</script>
+</html>

@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			* {
+				padding: 0;
+				margin: 0;
+			}
+			
+			body {
+				background-color: #00BFFF;
+			}
+			
+			marquee {
+				color: green;
+				margin-top: 100px;
+				font-size: 30px;
+			}
+			
+			.buttons {
+				width: 200px;
+				margin: 0 auto;
+				text-align: center;
+			}
+			
+			.moleBoxs {
+				width: 310px;
+				margin: 20px auto;
+			}
+			
+			.moleBoxs>img {
+				width: 100px;
+				height: 100px;
+			}
+			
+			.pScore {
+				margin-top: 20px;
+				font-size: 24px;
+				text-align: center;
+			}
+			
+			.scoreList {
+				position: absolute;
+				width: 200px;
+				height: 400px;
+				border: 2px solid blueviolet;
+				left: 200px;
+				padding: 20px;
+			}
+			
+			.scoreList>li {
+				list-style: none;
+				background-color: white;
+			}
+		</style>
+	</head>
+
+	<body>
+
+		<marquee behavior="alternate">打地鼠</marquee>
+		<div class="buttons">
+			<button id="start">开始</button>
+			<button id="over">结束</button>
+		</div>
+		<ul class="scoreList">
+		</ul>
+		<div class="moleBoxs">
+			<img src="imgMoles/bg.jpg" />
+			<img src="imgMoles/bg.jpg" />
+			<img src="imgMoles/bg.jpg" />
+			<img src="imgMoles/bg.jpg" />
+			<img src="imgMoles/bg.jpg" />
+			<img src="imgMoles/bg.jpg" />
+			<img src="imgMoles/bg.jpg" />
+			<img src="imgMoles/bg.jpg" />
+			<img src="imgMoles/bg.jpg" />
+		</div>
+		<p class="pScore">得分:<span id="score">0</span></p>
+	</body>
+	<script type="text/javascript">
+		localStorage.removeItem("scoresArray");
+		//前几名
+		var count = 11;
+		var lis = [];
+		var scoreList = document.querySelector(".scoreList");
+		for (var i = 0; i < count; i++) {
+			var li = document.createElement("li");
+			if (i == 0) {
+				li.innerText = "第一名:0";
+			}
+			lis[i] = li;
+			scoreList.appendChild(li);
+		}
+		var start = document.querySelector("#start");
+		var over = document.querySelector("#over");
+		var imgs = document.querySelectorAll(".moleBoxs>img");
+		var score = document.querySelector("#score");
+		var molesTask = null;
+		var time = 1000;
+		var previousImg;
+		start.addEventListener("click", function() {
+			//控制按钮状态
+			start.disabled=true;
+			over.disabled=false;
+			if(!molesTask)
+			{score.innerText=0}
+			 	
+			startMolesTask();
+		});
+		over.addEventListener("click", function() {
+			//控制按钮状态
+			over.disabled=true;
+			start.disabled=false;
+			
+			stopGame();
+			//结束取消小老鼠
+			previousImg.src = "imgMoles/bg.jpg";
+			//提交成绩
+			storeScore(score.innerText);
+		});
+
+		function storeScore(score) {
+			//取出来的是null 那么就取0
+			var scoresArray = localStorage.getItem("scoresArray");
+			//null完全的第一次
+			if (!scoresArray) {
+				var arr = [];
+				for (var i = 0; i <= count; i++) {
+					if (i == count) {
+						arr[i] = score;
+					} else {
+						arr[i] = "null";
+					}
+				}
+				lis[0].innerText = "第一名:" + arr[count];
+				var arrStr = JSON.stringify(arr);
+				localStorage.setItem("scoresArray", arrStr);
+			} else {
+				var jsonArray = JSON.parse(scoresArray);
+                //放在末尾
+				jsonArray.push(score);
+				var scores = [];
+				for (var i = 0; i < jsonArray.length; i++) {
+					scores[i] = jsonArray[i];
+				}
+				console.log(scores);
+				
+				var scoreArr = [];
+				for (var i = 0; i < scores.length; i++) {
+					if (scores[i] != "null") {
+						//在数组尾部添加
+						scoreArr.push(scores[i]);
+					}
+				}
+				console.log(scoreArr);
+				//排序
+				scoreArr.sort(function(x, y) {
+					return x - y;
+				});
+				var arrStr = JSON.stringify(scores);
+				          localStorage.setItem("scoresArray", arrStr);
+				
+				var index = 0;
+				
+				for (var i = scoreArr.length - 1; i >scoreArr.length - 1-count; i--) {
+					if(scoreArr[i]){
+						lis[index++].innerText = "第" + (scoreArr.length - i) + "名:" + scoreArr[i];
+					}
+				}
+				if (score == scoreArr[scoreArr.length - 1]) {
+					alert("恭喜获得打破记录~~~~~");
+				}
+			}
+		}
+		//开启游戏
+		function startMolesTask() {
+			stopGame();
+			molesTask = setInterval(function() {
+				if (previousImg) {
+					previousImg.src = "imgMoles/bg.jpg";
+				}
+				//产生随机数[0,8]或者[0,9)
+				//Math.random() [0,1)的小数
+				//记得解析成整数
+				var randomIndex = parseInt(Math.random() * imgs.length);
+				//随机取一个图片
+				var randomImg = imgs[randomIndex];
+				//切换成小老鼠
+				randomImg.src = "imgMoles/mole.gif";
+				//切换完就变成上一只了。   
+				previousImg = randomImg;
+			}, time);
+		}
+
+		function stopGame() {
+			//开启之前要关闭
+			clearInterval(molesTask);
+			//停止之后，置为空；
+			molesTask = null;
+		}
+		for (var i = 0; i < imgs.length; i++) {
+			imgs[i].addEventListener("click", function(e) {
+				//任务结束
+				if (!molesTask) {
+					//达到特定的条件，阻止代码往下执行
+					return;
+				}
+				//获得分数
+				var scoreNumber = parseInt(score.innerText);
+				//点击的是小老鼠
+				if (e.target.src.indexOf("mole") >= 0) {
+					scoreNumber = scoreNumber + 1;
+					//点击之后该改成草地
+					e.target.src = "imgMoles/bg.jpg";
+				} else {
+					scoreNumber = scoreNumber - 1;
+				}
+				//显示分数
+				score.innerText = scoreNumber;
+			});
+		}
+	</script>
+
+</html>

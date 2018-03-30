@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+	
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				padding: 0;
+				margin: 0;
+			}
+			.hot_class{
+				/*width:1000px ;*/
+				height: 320px;
+				margin:  0 auto;
+				/*background-color: gainsboro;*/
+				padding: 20px;
+				box-sizing: border-box;
+			}
+			.img_css{
+				width: 230px;
+				/*height: 270px;*/
+				border-radius:10px ;
+
+			}
+			.li_css{
+				border-radius:10px ;
+				width: 230px;
+				height: 270px;
+				float: left;
+				background-color: white;
+				list-style: none;
+				margin-right: 20px;
+			}
+			.li_css:hover{
+				box-shadow: 1px 2px 10px gray;
+			}
+			.a_css{
+				text-decoration: none;
+				font-size: 14px;
+				color: gray;
+				margin-left: 10px;
+			}
+			.p_css{
+				font-size: 15px;
+				margin-left: 10px;
+
+			}
+		</style>
+	</head>
+	<body>
+		<!--容器-->
+		<div class="hot_class">
+			
+			
+		</div>
+	</body>
+	<script type="text/javascript">
+	//=======数据区
+		//定义变量
+		var li00 = {imgPath:"tx/1510243888411.png",
+					title:"纪念碑谷2",
+					content:"本期大师班推出特别版，专程邀请了 《纪念碑谷2》游戏主美、艺术总监David"
+		};
+		var li01 = {imgPath:"tx/1510243888411.png",
+					title:"纪念碑谷2",
+					content:"本期大师班推出特别版，专程邀请了 《纪念碑谷2》游戏主美、艺术总监David"
+		};
+		var li02 = {imgPath:"tx/1510243888411.png",
+					title:"纪念碑谷2",
+					content:"本期大师班推出特别版，专程邀请了 《纪念碑谷2》游戏主美、艺术总监David"
+		};
+		var li03 = {imgPath:"tx/1510243888411.png",
+					title:"纪念碑谷2",
+					content:"本期大师班推出特别版，专程邀请了 《纪念碑谷2》游戏主美、艺术总监David"
+		};
+		//=======数据区
+		
+		//将变量装进一个数组
+		var lis = [li00,li01,li02,li03];
+		//将字符串转化为json 字符串
+		var jsonString = JSON.stringify(lis);
+		//拿到标签id
+		var hot_class = document.querySelector(".hot_class");
+		//将json字符串转化为json对象
+		var json  = JSON.parse(jsonString);
+		var ul = document.createElement("ul");
+		//生成三个li
+		for(var i =0;i<json.length;i++){
+			
+			var li  = document.createElement("li");
+			var img  = document.createElement("img");
+			var a  = document.createElement("a");
+			var p =  document.createElement("p");
+			
+			a.innerText = json[i].title;
+			p.innerText = json[i].content;
+			img.src = json[i].imgPath;
+			li.appendChild(img);
+			li.appendChild(a);
+			li.appendChild(p);
+			ul.appendChild(li);
+			hot_class.appendChild(ul);
+			
+			//标签的css
+			img.className = "img_css";
+			li.className = "li_css";
+			a.className = "a_css";
+			p.className = "p_css";
+		}
+		
+		
+	</script>
+	
+</html>

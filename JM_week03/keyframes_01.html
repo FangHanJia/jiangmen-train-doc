@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				padding: 0;
+				margin: 0;
+			}
+			.div01{
+				position: absolute;
+				width: 200px;
+				height: 200px;
+				background-color: gold;
+				animation: squ4 3s ;
+				/*animation-delay: 2s;*/
+			}
+			@keyframes squ{
+				from{top: 0px; left: 0px;}
+				to{ top: 0px; left: 400px;}
+			}
+			@keyframes squ4{
+				0%{top: 0px; left: 0px;
+				background-color: black;}
+				25%{top: 0px; left: 400px; 
+				background-color: green;}
+				50%{ top: 400px; left: 400px;
+				background-color: darkcyan;}
+				75%{ top: 400px; left: 800px;
+				background-color: blueviolet;}
+				100%{ top: 400px; left: 800px;}
+			}
+			
+		</style>
+	</head>
+	<body>
+		<div class="div01">
+			
+		</div>
+	</body>
+</html>

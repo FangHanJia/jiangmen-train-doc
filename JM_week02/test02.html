@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			.div01{
+				margin-top: 100px;
+				margin-left: 100px;
+				width: 400px;
+				height: 400px;
+				/*border: 0 solid red;*/
+				background-color: aqua;
+				position: absolute;
+			}
+			
+			/*绝对定位：到底相对谁？
+			 * 自己相对谁？
+			 * 有自己往外层一层一层的找，直到遇到带有position属性的父元素，
+			 * 那么他就相对于这个父元素。
+			 * 加入，一直没有找到，就相对于整个界面
+			 * */
+			.div01 .div02{
+				width: 200px;
+				height: 200px;
+				background-color: burlywood;
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				transform: translate(-50%,-50%);
+			}
+			.div01 .div02 .div03{
+				width: 100px;
+				height: 100px;
+				background-color: chartreuse;
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				transform: translate(-50%,-50%);
+			}
+			
+			
+		</style>
+	</head>
+	<body>
+		
+		<div class="div01">
+			<div class="div02">
+				<div class="div03">
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

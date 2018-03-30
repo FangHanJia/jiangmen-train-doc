@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+		.div01{
+			width: 240px;
+			border: 2px solid gray;
+			margin: 0 auto;
+		}
+		.div01>.div02{
+			overflow: hidden;
+			height: 250px;
+			width: 240px;
+			border-bottom-color:gray ;
+		}
+		.div01>.div02>img{
+			height: 250px;
+			width: 240px;
+		}
+		.div01:hover>.div02>img{
+			transform: scale(1.2) rotate(600deg);
+		}
+		
+		</style>
+	</head>
+	<body>
+		<div class="div01">
+			<div c class="div02">
+				<img src="img/2.jpg"/>
+			</div>
+			<p>我美不美?</p>
+		</div>
+		
+	</body>
+</html>

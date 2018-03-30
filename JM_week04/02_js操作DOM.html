@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<p id="p1">我是p1</p>
+		<p class="p2">我是p2</p>
+		<p class="p2">我是p2</p>
+		<p class="p2">我是p2</p>
+		<ul class="ul">
+			<li></li>
+			<li></li>
+			<li></li>
+		</ul>
+		
+		<img id="img" src="img/timg.jpg"/>
+		<input id="input01" type="text" value="hhhhhh" />
+	</body>
+	<!--
+    	作者：offline
+    	时间：2017-11-28
+    	描述：
+    -->
+    <script type="text/javascript">
+    	//获取标签对象
+    	var p1 = document.getElementById("p1");
+    	//获取标签的文本
+    	var p1Text = p1.innerText;
+    	alert(p1Text);
+    	p1.innerText="我被修改了";
+    	//--------------------------------------------------
+    	/**
+    	 * innerText:会把所有的内容当成文本输出，包括标签。
+    	 * innerHTML:会生成新标签。
+    	 * 
+    	 */
+    	p1.innerHTML = "我被修改了";
+    	//--------------------------------------------------
+    	var p2 = document.getElementsByClassName("p2");//获取所有的p2-class标签
+    	var p2_01 = p2[0];//获取第一个类标签
+    	p2_01.innerText = "p2被修改了";
+    	//------------------------------------------------
+    	//css选择器写法
+//  	var p1_new = document.querySelector("#p1");
+//  	    p1_new.innerText = "new P1";
+//  	var p2_new = document.querySelector(".p2");
+//  	    p2_new.innerText = "new P2";
+//  	var p3_new = document.querySelector(".p2:nth-child(2)");
+//  	    p3_new.innerText = "我是第二个";
+//  	var p4_new = document.querySelector(".p2:nth-child(3)");
+//  	    p4_new.innerText = "我是第三个";
+    	    
+    	var new_p =document.querySelectorAll(".p2")[2];
+    	    new_p.innerText="新的";
+    	    
+    	//----------------------------
+    	//如果，相同标签但是class不同，属于同一级兄弟标签，之间会互相影响。
+    	//使用一个容器将所有的class同名的标签包裹起来 
+    	document.querySelector(".ul>li:nth-child(3)").innerText ="afadf";
+    	//-------------------
+    	//修改图片
+    	var img = document.querySelector("#img");
+    	img.src = "img/timg (1).jpg";
+    	img.style.width = "500px";
+    	//css里面的中划线都要转化成首字母大写
+    	p1.style.backgroundColor="green";
+    	
+    	
+    	//-------------
+    	var input01=document.querySelector("#input01");
+    	 var text = input01.value;
+    	 alert(text);
+    	 //一旦不带var，同时自己被执行，那么就会变成全局变量。
+    	 function add(){
+    	 var a =2;
+    	 }
+    	 
+    </script>
+</html>

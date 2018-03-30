@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+
+	<body>
+	</body>
+	<script type="text/javascript">
+		/**
+		 * json数据：1、jsonObject ;2、jsonArray
+		 * jsonObject={name:"kingswim",age:18}  
+		 *            {key:value,key:value,key:value}
+		 *      取数据：用key 
+		 * jsonArray=["手机","电脑","眼镜"]
+		 *      [value,value,value]
+		 *   取数据：用索引
+		 */
+		//从网络上获取的json都是字符串。
+		var jsonPerson = {
+			name: "kingswim",
+			age: 18
+		}; //一个对象
+		var json = JSON.stringify(jsonPerson); //把对象转化成json字符串。
+		//"{'name':'kingswim','age':18}"
+		//现在这个 json 相当于网络传输过来的数据
+		//把json字符串转化为json对象
+		var jsonObj = JSON.parse(json);
+		//alert(jsonObj.name);
+		var array = ["手机", "电脑", "眼镜"];
+		var jsonArr = JSON.stringify(array); //json字符串。
+		//["手机","电脑","眼镜"] 这种字符串
+		var jsonArray = JSON.parse(jsonArr);
+		//            alert(jsonArray[0]);
+		//====================================
+		var Book = {
+			price: 200,
+			page: 1000
+		};
+		var person = {
+			name: "kingswim",
+			age: 18,
+			book: Book
+		};
+		//{name:"kingswim",age:18,book:{price:200,page:1000}};
+		var pb = JSON.stringify(person);
+		//字符串转json对象
+		var jpb = JSON.parse(pb);
+		//alert(jpb.book.page); 
+		//====================================
+		var computer0 = {
+			price: 20000,
+			weight: 2
+		};
+		var computer1 = {
+			price: 10000,
+			weight: 3
+		};
+		var computer2 = {
+			price: 2000,
+			weight: 1
+		};
+		var computer3 = {
+			price: 200,
+			weight: 6
+		};
+		var computers = [computer0, computer1, computer2, computer3];
+		var person02 = {
+			name: "kingswim",
+			age: 18,
+			Computer: computers
+		};
+		var str = JSON.stringify(person02);
+		//20000块的电脑有多重   
+		var strJson = JSON.parse(str);
+		var com = strJson.Computer;
+		for (var i = 0; i < com.length; i++) {
+			if(com[i].price==20000){
+				alert(com[i].weight);
+			}
+		}
+	</script>
+
+</html>

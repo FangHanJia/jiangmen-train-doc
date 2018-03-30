@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			
+		</style>
+	</head>
+	<body>
+		<ul class="list">
+			<li>1</li>
+			<li>2</li>
+			<li>3</li>
+			<li>4</li>
+			<li>5</li>
+		</ul>
+		<div class="div01"></div>
+		<div class="div03"></div>
+	</body>
+	<!--1、导入jQuery的链接:里面不写代码，应另起一个-->
+	<script type="text/javascript" src="js/jquery-2.1.0.js" ></script>
+	<script type="text/javascript">
+		//1、拿到标签
+		var lisJ = $(".list>li");
+		lisJ.text("jjjj");//修改内容
+		//eq:通过索引获取元素，索引从0开始
+		var second = $(".list>li").eq(1);
+			//修改；传参数
+		    second.text("第二个");
+		    //获取：不传参数
+//		    alert(second.text());
+		//获得子类
+		$(".list").children();
+		
+//		$().parent();--获得多个父元素，
+		//siblings --其他兄弟元素
+		$(".list>li").last().text("aaa").siblings().text("bbbbb");
+		
+		//=============================================================
+		//修改css：对象修改
+		$(".list>li").last().css({"color":"#FF0000"});
+		//获取css：属性获取
+		console.log($(".list>li").last().css("width"));
+		//======================================================================
+		//动画
+//		$(".div01").css({width:"200px",height:"200px",background:"red"}).hide("slow",function(){
+//			//回调，动画执行完毕调用
+////			alert("隐身");
+//			$(".div01").show("show");
+//		});
+		$(".div01").css({width:"200px",height:"200px",background:"red"}).animate({width:"400px"},500,function(){
+			alert("ajglk");
+		});
+		//finish:停止在最后状态
+		//stop:停止在当前动画状态
+		//========================================================================
+		//事件对象
+//		$(".div03").css({width:"200px",height:"200px",background:"red"})
+//		.click(function(){
+//			alert("afd");
+//		});
+		$(".div03").css({width:"200px",height:"200px",background:"red"})
+		.click(function(e){
+			//将DOM转化为jquery对象
+			$(e.target).text("adfaf");
+		});
+		//模拟手动事件
+		$(".div03").trigger("click");
+		//hover:进去和出来
+		$(".div03").hover(function(){},function(){});
+		$(".list>li").click(function(){
+			alert("afds");
+		});
+	</script>
+</html>
