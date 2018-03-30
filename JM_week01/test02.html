@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+		.div{
+			width: 1200px;
+			margin: 100px  auto;
+		}
+		.div a {
+			   
+				width: 30px;
+				height: 30px;
+				margin-right: 5px;
+				/*float: left;浮动可以左浮动和右浮动；跟display：inline-block只能出现一个*/
+				text-decoration: none;
+				color: blue;
+				display: inline-block;
+				text-align: center;
+				border: 1px solid gainsboro;
+				line-height: 30px;
+			}
+			
+			a:hover {
+				background-color: red;
+			}
+			/*从外到里写：1、结构清晰，2、防止权重过低*/
+			.div .aText,.div .a1{
+				width: 50px;
+			}
+			
+			
+			
+		</style>
+
+	</head>
+
+	<body>
+		<div class="div">
+			<a href="" class="aText">上一页</a>
+			<a href="" class="a1">1</a>
+			<a href="" class="a1">2</a>
+			<a href="" class="a1">3</a>
+			<a href="" class="a1">4</a>
+			<a href="" class="a1">5</a>
+			<a href="" class="a1">6</a>
+			<a href="" class="a1">7</a>
+			<a href="" class="a1">8</a>
+			<a href="" class="a1">9</a>
+			<a href="" class="aText">下一页</a>
+		</div>
+	</body>
+
+</html>
